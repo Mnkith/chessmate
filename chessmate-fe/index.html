@@ -6,99 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-   <style>
-
-
-.wrapper {
-  display: grid;
-  font-size: 35px;
-  border: black 2px solid;
-  background-color: rgb(7, 7, 7);
-  gap: 1px;
-  /* padding: 1px; */
-  grid-template-rows: repeat(8, 1fr);
-  grid-template-columns: repeat(8, 1fr);
-  grid-template-areas: "a8 b8 c8 d8 e8 f8 g8 h8"
-                       "a7 b7 c7 d7 e7 f7 g7 h7"
-                       "a6 b6 c6 d6 e6 f6 g6 h6"
-                       "a5 b5 c5 d5 e5 f5 g5 h5"
-                       "a4 b4 c4 d4 e4 f4 g4 h4"
-                       "a3 b3 c3 d3 e3 f3 g3 h3"
-                       "a2 b2 c2 d2 e2 f2 g2 h2"
-                       "a1 b1 c1 d1 e1 f1 g1 h1";
-  
-  /* grid-auto-rows: minmax(100px, auto); */
-  height: 400px;
-  width: 400px;
-  grid-area: cb;
-}
-
-
-.page {
-  display: grid;
-  font-size: 35px;
-  border: black 2px solid;
-  background-color: rgb(7, 7, 7);
-  /* gap: 1px; */
-  /* padding: 1px; */
-  grid-template-rows: repeat(8, 1fr);
-  grid-template-columns: 20% 12% repeat(8, 1fr) 12% 12%;
-  grid-template-areas: "nb nb nb nb nb nb nb nb"
-                       "sb sb c7 d7 e7 f7 g7 h7"
-                       "sb sb cb cb cb cb g6 h6"
-                       "sb sb cb cb cb cb g5 h5"
-                       "sb sb cb cb cb cb g4 h4"
-                       "sb sb cb cb cb cb g3 h3"
-                       "sb sb c2 d2 e2 f2 g2 h2"
-                       "a1 b1 c1 d1 e1 f1 g1 h1";
-  
-  /* grid-auto-rows: minmax(100px, auto); */
-  height: 100%;
-  width: 100%;
-}
-
-
-
-.black-square {
-    font-size: 50px;
-    text-align: center;
-    background-color: rgb(182, 172, 172);
-    z-index: 0;
-}
-.piece {
-  font-size: iem;
-    text-align: center;
-    z-index: 1;
-}
-
-.white-square {
-    font-size: 50px;
-    text-align: center;
-    background-color: white;
-    z-index: 0;
-}
-
-
-
-	p {
-	color: blue;
-  	/* text-shadow: -5px -5px 0 #fb1, 1px -1px 0 #999, -1px 1px 0 #000, 5px 5px 0 #000; */
-	
-	font-size: 70px
-	
-
-	}
-
-	/* div {
-  height: 200px;
-  width: 50%;
-  background-color: powderblue;
-} */
-
-
-
-
-   </style>
+    <link rel="stylesheet" href="stylesheet/main.css"> 
   </head>
   <body>
     <!-- <div class="wrapper">
@@ -113,7 +21,7 @@
       <div class="black-square">&#9818</div>
   </div>div     -->
 <div class='page'>
-<div class="wrapper">
+<div id = 'board' class="wrapper">
   <!-- <div class='piece' style='grid-area: f4;'>&#9818</div> -->
   <div class="white-square" style='grid-area: a8;'></div>
   <div class="black-square" style='grid-area: b8;'></div>
@@ -185,9 +93,9 @@
   <div class="black-square" style='grid-area: e1;'></div>
   <div class="white-square" style='grid-area: f1;'></div>
   <div class="black-square" style='grid-area: g1;'></div>
-  <div class="white-square v" style='grid-area: h1;'></div>
+  <div class="white-square" style='grid-area: h1;'></div>
   
-  <div id='t' class='piece' style='grid-area: b8;'>&#9812</div>
+  <!-- <div id='t' class='piece' style='grid-area: b8;'>&#9812</div> -->
 </div>
 </div>
 
@@ -195,26 +103,41 @@
 
 
 <script>
-let template = document.getElementById('my-paragraph');
-let templateContent = template.content;
-document.body.appendChild(templateContent);
-console.log(document.getElementsByClassName('piece')[0].style.gridArea)
-console.log(document.getElementsByClassName('piece')[0].style.gridArea = 'a8')
-console.log(document.getElementsByClassName('piece')[0].offsetLeft)
-console.log(document.getElementsByClassName('v')[0].offsetLeft)
-// console.log(document.getElementsByClassName('piece')[0].offsetTop)
-t = document.getElementById("t")
+// let template = document.getElementById('my-paragraph');
+// let templateContent = template.content;
+// document.body.appendChild(templateContent);
+// console.log(document.getElementsByClassName('piece')[0].style.gridArea)
+// console.log(document.getElementsByClassName('piece')[0].style.gridArea = 'a8')
+// console.log(document.getElementsByClassName('piece')[0].offsetLeft)
+// console.log(document.getElementsByClassName('v')[0].offsetLeft)
+fetch('http://127.0.0.1:3000/pieces')
+  .then(resp => resp.json())
+  .then(json => initializeBoard(json));
 
-t.animate([
-  // keyframes
-  { transform: 'translateY(10px)' },
-  { transform: 'translateY(50px)' }
-], {
-  // timing options
-  duration: 1000,
-  // iterations: Infinity
-});
-setTimeout(() => {document.getElementsByClassName('piece')[0].style.gridArea = 'a7'}, 1000)
+function initializeBoard(pieces){
+  pieces.forEach(p => {
+    div = document.createElement('div')
+    div.className = 'piece'
+    div.innerHTML = '&#9812'
+    div.style.gridArea = p.position
+    board = document.getElementById('board')
+    board.appendChild(div)
+  })
+
+}
+// console.log(document.getElementsByClassName('piece')[0].offsetTop)
+// t = document.getElementById("t")
+
+// t.animate([
+//   // keyframes
+//   { transform: 'translateY(10px)' },
+//   { transform: 'translateY(50px)' }
+// ], {
+//   // timing options
+//   duration: 1000,
+//   // iterations: Infinity
+// });
+// setTimeout(() => {document.getElementsByClassName('piece')[0].style.gridArea = 'a7'}, 1000)
 
 
 

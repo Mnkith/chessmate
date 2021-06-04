@@ -20,19 +20,21 @@ ActiveRecord::Schema.define(version: 2021_06_04_032504) do
     t.string "white"
     t.string "black"
     t.string "result"
-    t.integer "game_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["game_id"], name: "index_games_on_game_id"
   end
 
   create_table "pieces", force: :cascade do |t|
-    t.string "type"
+    t.string "name"
+    t.string "symbol"
     t.string "color"
     t.string "position"
+    t.string "initial"
+    t.integer "game_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["game_id"], name: "index_pieces_on_game_id"
   end
 
-  add_foreign_key "games", "games"
+  add_foreign_key "pieces", "games"
 end

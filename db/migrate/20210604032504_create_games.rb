@@ -8,7 +8,6 @@ class CreateGames < ActiveRecord::Migration[6.1]
       t.string :white
       t.string :black
       t.string :result
-      t.references :game, foreign_key: true
 
       t.timestamps
     end

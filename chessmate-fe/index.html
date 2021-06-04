@@ -102,7 +102,11 @@
 
 
 
+<script src="src/game.js"></script>
 <script>
+
+  
+  
 // let template = document.getElementById('my-paragraph');
 // let templateContent = template.content;
 // document.body.appendChild(templateContent);
@@ -110,13 +114,11 @@
 // console.log(document.getElementsByClassName('piece')[0].style.gridArea = 'a8')
 // console.log(document.getElementsByClassName('piece')[0].offsetLeft)
 // console.log(document.getElementsByClassName('v')[0].offsetLeft)
-function fetchGame(round = 1){
-fetch(`http://127.0.0.1:3000/games/${round}`)
-  .then(resp => resp.json())
-  .then(json => initializeBoard(json));
-}
 
-fetchGame()
+
+console.log(Game.fetchGame())
+
+// Game.fetchGame()
 function initializeBoard(game){
   pieces = game.pieces
   pieces.forEach(p => {

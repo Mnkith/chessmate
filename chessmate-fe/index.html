@@ -110,11 +110,15 @@
 // console.log(document.getElementsByClassName('piece')[0].style.gridArea = 'a8')
 // console.log(document.getElementsByClassName('piece')[0].offsetLeft)
 // console.log(document.getElementsByClassName('v')[0].offsetLeft)
-fetch('http://127.0.0.1:3000/pieces')
+function fetchGame(round = 1){
+fetch(`http://127.0.0.1:3000/games/${round}`)
   .then(resp => resp.json())
   .then(json => initializeBoard(json));
+}
 
-function initializeBoard(pieces){
+fetchGame()
+function initializeBoard(game){
+  pieces = game.pieces
   pieces.forEach(p => {
     div = document.createElement('div')
     div.className = 'piece'

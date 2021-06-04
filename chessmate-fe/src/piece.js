@@ -6,4 +6,6 @@ class Piece {
     this.position = position
     this.initial = initial
   }
+
+  
 }

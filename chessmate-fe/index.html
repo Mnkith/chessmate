@@ -118,7 +118,7 @@ function initializeBoard(pieces){
   pieces.forEach(p => {
     div = document.createElement('div')
     div.className = 'piece'
-    div.innerHTML = '&#9812'
+    div.innerHTML = p.symbol
     div.style.gridArea = p.position
     board = document.getElementById('board')
     board.appendChild(div)

@@ -2,13 +2,22 @@
 <!DOCTYPE html>
 <html>
   <head>
-	<title>Ohction</title>
+	<title>chessmate</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="stylesheet/main.css"> 
   </head>
   <body>
+    <!-- <div class='main-menu'>
+      <form action="http://localhost:3000/games" method="POST">
+        <label> Dog Name: <input type="text" name="dogName" id="dogName" /></label><br />
+        <label> Dog Breed: <input type="text" name="dogBreed" id="dogBreed" /></label><br />
+        <input type="submit" name="submit" id="submit" value="Submit" />
+      </form>
+
+    </div> -->
+    
     <!-- <div class="wrapper">
   
       <div class="white-square">&#9812</div>
@@ -21,7 +30,26 @@
       <div class="black-square">&#9818</div>
   </div>div     -->
 <div class='page'>
-<div id = 'board' class="wrapper">
+
+
+  <div id='main' class='main-menu'>
+    <button id='new-game' class='menu-btn' type="button">Start New Game!</button>
+    <button id='existing-game' class='menu-btn' type="button">Retrieve Game</button>
+  </div>
+
+  <div id='new-game-menu'>
+    <form action="http://localhost:3000/games" method="POST">
+      <label> Event: <input type="text" name="event" id="event" /></label><br />
+      <label> Site: <input type="text" name="site" id="site" /></label><br />
+      <label> White player: <input type="text" name="site" id="white" /></label><br />
+      <label> Black player: <input type="text" name="site" id="black" /></label><br />
+      <input id='start-game' type="submit" class='menu-btn' name="submit" id="submit" value="start game" />
+    </form>
+    <button id='back-to-main' class='menu-btn' type="button">back to main menyu</button>
+  </div>
+
+  
+<div id = 'board' class="wrapper" >
   <!-- <div class='piece' style='grid-area: f4;'>&#9818</div> -->
   <div class="white-square" style='grid-area: a8;'></div>
   <div class="black-square" style='grid-area: b8;'></div>
@@ -103,51 +131,8 @@
 
 
 <script src="src/game.js"></script>
-<script>
+<script src="src/index.js"></script>
 
-  
-  
-// let template = document.getElementById('my-paragraph');
-// let templateContent = template.content;
-// document.body.appendChild(templateContent);
-// console.log(document.getElementsByClassName('piece')[0].style.gridArea)
-// console.log(document.getElementsByClassName('piece')[0].style.gridArea = 'a8')
-// console.log(document.getElementsByClassName('piece')[0].offsetLeft)
-// console.log(document.getElementsByClassName('v')[0].offsetLeft)
-
-
-console.log(Game.fetchGame())
-
-// Game.fetchGame()
-function initializeBoard(game){
-  pieces = game.pieces
-  pieces.forEach(p => {
-    div = document.createElement('div')
-    div.className = 'piece'
-    div.innerHTML = p.symbol
-    div.style.gridArea = p.position
-    board = document.getElementById('board')
-    board.appendChild(div)
-  })
-
-}
-// console.log(document.getElementsByClassName('piece')[0].offsetTop)
-// t = document.getElementById("t")
-
-// t.animate([
-//   // keyframes
-//   { transform: 'translateY(10px)' },
-//   { transform: 'translateY(50px)' }
-// ], {
-//   // timing options
-//   duration: 1000,
-//   // iterations: Infinity
-// });
-// setTimeout(() => {document.getElementsByClassName('piece')[0].style.gridArea = 'a7'}, 1000)
-
-
-
-</script>
 
 </body>
 </html>

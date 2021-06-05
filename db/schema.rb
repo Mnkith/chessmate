@@ -13,13 +13,13 @@
 ActiveRecord::Schema.define(version: 2021_06_04_032504) do
 
   create_table "games", force: :cascade do |t|
-    t.string "event"
-    t.string "site"
-    t.string "date"
-    t.string "round"
-    t.string "white"
-    t.string "black"
-    t.string "result"
+    t.string "event", default: ""
+    t.string "site", default: ""
+    t.string "date", default: ""
+    t.string "round", default: ""
+    t.string "white", default: ""
+    t.string "black", default: ""
+    t.string "result", default: ""
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

@@ -1,4 +1,5 @@
 .wrapper {
+  visibility: hidden;
   display: grid;
   font-size: 35px;
   border: black 2px solid;
@@ -21,13 +22,71 @@
   width: 400px;
   grid-area: cb;
 }
+.main-menu{
+  display:block;
+  /* justify-content: center; */
+  /* align-items: center; */
+  height: 200px;
+  /* border: 3px solid rgb(168, 241, 168); */
+  grid-area: cb;
+  background-color: rgb(214, 200, 194);
+  height: 400px;
+  width: 400px;
+  align-items: center;
+  align-content: center;
+  border-radius: 4px;
+  opacity: 95%;
+  z-index: 1;
+  
+}
+
+#new-game-menu{
+  display:block;
+  /* justify-content: center; */
+  /* align-items: center; */
+  height: 200px;
+  /* border: 3px solid rgb(168, 241, 168); */
+  grid-area: cb;
+  background-color: rgb(214, 200, 194);
+  font-size: xlarge;
+  height: 400px;
+  width: 400px;
+  align-items: center;
+  align-content: center;
+  border-radius: 4px;
+  opacity: 95%;
+  z-index: 0;
+  /* visibility: hidden; */
+}
+
+.menu-btn{
+  /* align-content: center;
+  align-self: center; */
+  display:block;
+  /* height: 40px; */
+  width: 98%;
+  background-color: #484bf1;
+  border: none;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  /* text-decoration: none; */
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  border-radius: 4px;
+  visibility: inherit;
+  opacity: 100%;
+  margin-top: 60px;
+
+}
 
 
 .page {
   display: grid;
   font-size: 35px;
   border: black 2px solid;
-  background-color: rgb(7, 7, 7);
+  /* background-color: rgb(7, 7, 7); */
   /* gap: 1px; */
   /* padding: 1px; */
   grid-template-rows: repeat(8, 1fr);

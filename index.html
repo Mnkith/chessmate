@@ -1,0 +1,199 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+	<title>chessmate</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="stylesheet/main.css"> 
+  </head>
+  <body>
+    <!-- <div class='main-menu'>
+      <form action="http://localhost:3000/games" method="POST">
+        <label> Dog Name: <input type="text" name="dogName" id="dogName" /></label><br />
+        <label> Dog Breed: <input type="text" name="dogBreed" id="dogBreed" /></label><br />
+        <input type="submit" name="submit" id="submit" value="Submit" />
+      </form>
+
+    </div> -->
+    
+    <!-- <div class="wrapper">
+  
+      <div class="white-square">&#9812</div>
+      <div class="black-square">&#9818</div>
+      <div class="white-square">&#9818</div>
+      <div class="black-square">&#9812</div>
+      <div class="white-square">&#9812</div>
+      <div class="black-square">&#9818</div>
+      <div class="white-square">&#9818</div>
+      <div class="black-square">&#9818</div>
+  </div>div     -->
+<div class='page'>
+
+
+  <!-- <div id='main' class='main-menu'>
+    <button id='new-game' class='menu-btn' type="button">Start New Game!</button>
+    <button id='existing-game' class='menu-btn' type="button">Retrieve Game</button>
+  </div>
+
+  <div id='new-game-menu'>
+    <form action="http://localhost:3000/games" method="POST">
+      <label> Event: <input type="text" name="event" id="event" /></label><br />
+      <label> Site: <input type="text" name="site" id="site" /></label><br />
+      <label> White player: <input type="text" name="site" id="white" /></label><br />
+      <label> Black player: <input type="text" name="site" id="black" /></label><br />
+      <input id='start-game' type="submit" class='menu-btn' name="submit" id="submit" value="start game" />
+    </form>
+    <button id='back-to-main' class='menu-btn' type="button">back to main menyu</button>
+  </div> -->
+<div id='black-captures'>
+  <div class="black-square"></div>
+  <div class="black-square"></div>
+  <div class="black-square"></div>
+  <div class="black-square"></div>
+  <div class="black-square"></div>
+  <div class="black-square"></div>
+  <div class="black-square"></div>
+  <div class="black-square"></div>
+
+  <div class="black-square"></div>
+  <div class="black-square"></div>
+  <div class="black-square"></div>
+  <div class="black-square"></div>
+  <div class="black-square"></div>
+  <div class="black-square"></div>
+  <div class="black-square"></div>
+  <div class="black-square"></div>
+
+</div>
+<div id='white-captures'>
+  <div class="white-square"></div>
+  <div class="white-square"></div>
+  <div class="white-square"></div>
+  <div class="white-square"></div>
+  <div class="white-square"></div>
+  <div class="white-square"></div>
+  <div class="white-square"></div>
+  <div class="white-square"></div>
+  
+  <div class="white-square"></div>
+  <div class="white-square"></div>
+  <div class="white-square"></div>
+  <div class="white-square"></div>
+  <div class="white-square"></div>
+  <div class="white-square"></div>
+  <div class="white-square"></div>
+  <div class="white-square"></div>
+
+</div>
+<div id = 'board' class="wrapper" >
+  <!-- <div class='piece' style='grid-area: f4;'>&#9818</div> -->
+  <div class="square white-square" style='grid-area: a8;'></div>
+  <div class="square black-square" style='grid-area: b8;'></div>
+  <div class="square white-square" style='grid-area: c8;'></div>
+  <div class="square black-square" style='grid-area: d8;'></div>
+  <div class="square white-square" style='grid-area: e8;'></div>
+  <div class="square black-square" style='grid-area: f8;'></div>
+  <div class="square white-square" style='grid-area: g8;'></div>
+  <div class="square black-square" style='grid-area: h8;'></div>
+   
+  <div class="square black-square" style='grid-area: a7;'></div>
+  <div class="square white-square" style='grid-area: b7;'></div>
+  <div class="square black-square" style='grid-area: c7;'></div>
+  <div class="square white-square" style='grid-area: d7;'></div>
+  <div class="square black-square" style='grid-area: e7;'></div>
+  <div class="square white-square" style='grid-area: f7;'></div>
+  <div class="square black-square" style='grid-area: g7;'></div>
+  <div class="square white-square" style='grid-area: h7;'></div>
+   
+  <div class="square white-square" style='grid-area: a6;'></div>
+  <div class="square black-square" style='grid-area: b6;'></div>
+  <div class="square white-square" style='grid-area: c6;'></div>
+  <div class="square black-square" style='grid-area: d6;'></div>
+  <div class="square white-square" style='grid-area: e6;'></div>
+  <div class="square black-square" style='grid-area: f6;'></div>
+  <div class="square white-square" style='grid-area: g6;'></div>
+  <div class="square black-square" style='grid-area: h6;'></div>
+   
+  <div class="square black-square" style='grid-area: a5;'></div>
+  <div class="square white-square" style='grid-area: b5;'></div>
+  <div class="square black-square" style='grid-area: c5;'></div>
+  <div class="square white-square" style='grid-area: d5;'></div>
+  <div class="square black-square" style='grid-area: e5;'></div>
+  <div class="square white-square" style='grid-area: f5;'></div>
+  <div class="square black-square" style='grid-area: g5;'></div>
+  <div class="square white-square" style='grid-area: h5;'></div>
+   
+  <div class="square white-square" style='grid-area: a4;'></div>
+  <div class="square black-square" style='grid-area: b4;'></div>
+  <div class="square white-square" style='grid-area: c4;'></div>
+  <div class="square black-square" style='grid-area: d4;'></div>
+  <div class="square white-square" style='grid-area: e4;'></div>
+  <div class="square black-square" style='grid-area: f4;'></div>
+  <div class="square white-square" style='grid-area: g4;'></div>
+  <div class="square black-square" style='grid-area: h4;'></div>
+   
+  <div class="square black-square" style='grid-area: a3;'></div>
+  <div class="square white-square" style='grid-area: b3;'></div>
+  <div class="square black-square" style='grid-area: c3;'></div>
+  <div class="square white-square" style='grid-area: d3;'></div>
+  <div class="square black-square" style='grid-area: e3;'></div>
+  <div class="square white-square" style='grid-area: f3;'></div>
+  <div class="square black-square" style='grid-area: g3;'></div>
+  <div class="square white-square" style='grid-area: h3;'></div>
+   
+  <div class="square white-square" style='grid-area: a2;'></div>
+  <div class="square black-square" style='grid-area: b2;'></div>
+  <div class="square white-square" style='grid-area: c2;'></div>
+  <div class="square black-square" style='grid-area: d2;'></div>
+  <div class="square white-square" style='grid-area: e2;'></div>
+  <div class="square black-square" style='grid-area: f2;'></div>
+  <div class="square white-square" style='grid-area: g2;'></div>
+  <div class="square black-square" style='grid-area: h2;'></div>
+   
+  <div class="square black-square" style='grid-area: a1;'></div>
+  <div class="square white-square" style='grid-area: b1;'></div>
+  <div class="square black-square" style='grid-area: c1;'></div>
+  <div class="square white-square" style='grid-area: d1;'></div>
+  <div class="square black-square" style='grid-area: e1;'></div>
+  <div class="square white-square" style='grid-area: f1;'></div>
+  <div class="square black-square" style='grid-area: g1;'></div>
+  <div class="square white-square" style='grid-area: h1;'></div>
+  
+  <!-- <div id='t' class='piece' style='grid-area: b8;'>&#9812</div> -->
+</div>
+</div>
+
+
+
+
+<script src="src/game.js"></script>
+<script src="src/piece.js"></script>
+<script src="src/index.js"></script>
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

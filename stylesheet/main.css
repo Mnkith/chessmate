@@ -1,0 +1,185 @@
+.wrapper {
+  /* visibility: hidden; */
+  display: grid;
+  font-size: 35px;
+  border: black 2px solid;
+  background-color: rgb(7, 7, 7);
+  gap: 1px;
+  /* padding: 1px; */
+  grid-template-rows: repeat(8, 1fr);
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-areas: "a8 b8 c8 d8 e8 f8 g8 h8"
+                       "a7 b7 c7 d7 e7 f7 g7 h7"
+                       "a6 b6 c6 d6 e6 f6 g6 h6"
+                       "a5 b5 c5 d5 e5 f5 g5 h5"
+                       "a4 b4 c4 d4 e4 f4 g4 h4"
+                       "a3 b3 c3 d3 e3 f3 g3 h3"
+                       "a2 b2 c2 d2 e2 f2 g2 h2"
+                       "a1 b1 c1 d1 e1 f1 g1 h1";
+  
+  /* grid-auto-rows: minmax(100px, auto); */
+  height: 480px;
+  width: 480px;
+  grid-area: cb;
+  cursor: pointer;
+}
+.main-menu{
+  display:block;
+  /* justify-content: center; */
+  /* align-items: center; */
+  height: 200px;
+  /* border: 3px solid rgb(168, 241, 168); */
+  grid-area: cb;
+  background-color: rgb(214, 200, 194);
+  height: 400px;
+  width: 400px;
+  align-items: center;
+  align-content: center;
+  border-radius: 4px;
+  opacity: 95%;
+  z-index: 1;
+  
+}
+
+#new-game-menu{
+  display:block;
+  /* justify-content: center; */
+  /* align-items: center; */
+  height: 200px;
+  /* border: 3px solid rgb(168, 241, 168); */
+  grid-area: cb;
+  background-color: rgb(214, 200, 194);
+  font-size: xlarge;
+  height: 400px;
+  width: 100%;
+  align-items: center;
+  align-content: center;
+  border-radius: 4px;
+  opacity: 95%;
+  z-index: 0;
+  /* visibility: hidden; */
+}
+
+.menu-btn{
+  /* align-content: center;
+  align-self: center; */
+  display:block;
+  /* height: 40px; */
+  width: 98%;
+  background-color: #484bf1;
+  border: none;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  /* text-decoration: none; */
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  border-radius: 4px;
+  visibility: inherit;
+  opacity: 100%;
+  margin-top: 60px;
+
+}
+
+
+.page {
+  display: grid;
+  font-size: 35px;
+  border: black 2px solid;
+  /* background-color: rgb(7, 7, 7); */
+  /* gap: 1px; */
+  /* padding: 1px; */
+  grid-template-rows: repeat(10, 1fr);
+  grid-template-columns: repeat(10, 1fr) ;
+  grid-template-areas: "nb nb nb nb nb nb nb nb nb nb"
+                       "sb sb sb bc bc bc bc xx xx h7"
+                       "sb sb sb cb cb cb cb xx xx h6"
+                       "sb sb sb cb cb cb cb xx xx h5"
+                       "sb sb sb cb cb cb cb xx xx h4"
+                       "sb sb sb cb cb cb cb xx xx h3"
+                       "sb sb sb wc wc wc wc xx xx h2"
+                       "a1 a1 b1 c1 d1 e1 f1 xx xx h1"
+                       "a1 a1 b1 c1 d1 e1 f1 xx xx h1"
+                       "a1 a1 b1 c1 d1 e1 f1 xx xx h1";
+  
+  /* grid-auto-rows: minmax(100px, auto); */
+  height: 100%;
+  width: 100%;
+}
+
+#black-captures{
+  display: grid;
+  gap: 1px;
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-areas: "a1 b1 c1 d1 e1 f1 g1 h1"
+                       "a2 b2 c2 d2 e2 f2 g2 h2";
+  background-color: rgb(0, 0, 0);
+  grid-area: bc;
+  width: 480px;
+  border: black 2px solid;
+}
+
+#white-captures{
+  display: grid;
+  gap: 1px;
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-areas: "a7 b7 c7 d7 e7 f7 g7 h7"
+                       "a8 b8 c8 d8 e8 f8 g8 h8";
+  background-color: rgb(0, 0, 0);
+  grid-area: wc;
+  width: 480px;
+  border: black 2px solid;
+}
+
+.black-square {
+    font-size: 50px;
+    text-align: center;
+    background-color: rgb(182, 172, 172);
+    z-index: 0;
+}
+.piece {
+  font-size: iem;
+    text-align: center;
+    z-index: 9;
+}
+
+.piece:hover {
+  border: 3px solid rgb(16, 186, 238);
+}
+
+.white-square {
+    font-size: 50px;
+    text-align: center;
+    background-color: white;
+    z-index: 0;
+  }
+  
+  #board .white-square:hover{
+  border: 3px solid rgb(16, 186, 238);
+  /* border: 3px solid rgb(238, 42, 8); */
+}
+#board .black-square:hover{
+  border: 3px solid rgb(16, 186, 238);
+}
+
+
+
+	p {
+	color: blue;
+  	/* text-shadow: -5px -5px 0 #fb1, 1px -1px 0 #999, -1px 1px 0 #000, 5px 5px 0 #000; */
+	
+	font-size: 70px
+	
+
+	}
+
+	/* div {
+  height: 200px;
+  width: 50%;
+  background-color: powderblue;
+} */
+
+

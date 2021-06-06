@@ -14,7 +14,10 @@ class GamesController < ApplicationController
 
     # binding.pry
     game = Game.create game_params
-    game.pieces = Game.find_by_id(1).pieces
+    Game.find_by_id(1).pieces.each do |p| 
+      # binding.pry
+       game.pieces << Piece.new(name: p.name, symbol: p.symbol, color: p.color, position: p.position, initial: p.initial)
+    end
   end
 
 

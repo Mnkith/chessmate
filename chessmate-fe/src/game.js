@@ -49,9 +49,6 @@ class Game {
 
 
   persist(){
-    // console.log(this)
-  // e.preventDefault()
-
     fetch("http://127.0.0.1:3000/games", {
       method: "POST",
       headers: {
@@ -60,11 +57,11 @@ class Game {
       },
       body: JSON.stringify(this)
     })
-    .then(function(response) {
-      return response.json();
-    })
-    .then(function(object) {
-      console.log(object);
-    }); ;
+    // .then(function(response) {
+    //    response.json();
+    // })
+    // .then(function(object) {
+    //   console.log(object);
+    // }); ;
   }
 }

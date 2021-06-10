@@ -2,7 +2,23 @@
   background-image: url('example_img_girl.jpg');
   background-repeat: no-repeat;
 } */
-
+.main-menu{
+  display:block;
+  /* justify-content: center; */
+  /* align-items: center; */
+  /* height: 200px; */
+  /* border: 3px solid rgb(168, 241, 168); */
+  grid-area: cb;
+  /* background-color: rgb(214, 200, 194); */
+  /* height: 400px; */
+  width: 400px;
+  /* align-items: center;
+  align-content: center; */
+  /* border-radius: 4px; */
+  /* opacity: 95%; */
+  /* z-index: 1; */
+  
+}
 
 
 .wrapper {
@@ -29,24 +45,9 @@
   width: 410px;
   grid-area: cb;
   cursor: pointer;
+  visibility: hidden;
 }
-.main-menu{
-  display:block;
-  /* justify-content: center; */
-  /* align-items: center; */
-  height: 200px;
-  /* border: 3px solid rgb(168, 241, 168); */
-  grid-area: cb;
-  /* background-color: rgb(214, 200, 194); */
-  /* height: 400px; */
-  width: 400px;
-  /* align-items: center;
-  align-content: center; */
-  /* border-radius: 4px; */
-  /* opacity: 95%; */
-  /* z-index: 1; */
-  
-}
+
 
 .digit-label{
   color: white;
@@ -73,7 +74,7 @@
   font-family: cursive;
   text-align: center;
   font-size:medium;
-  
+  visibility: hidden;
   /* grid-area: d8; */
 }
 
@@ -131,16 +132,15 @@
   grid-template-rows: 100px repeat(8, 1fr);
   grid-template-columns: repeat(10, 1fr) ;
   grid-template-areas:
-                       /* "nb nb nb nb nb nb nb nb nb nb" */
-                       " sb bc bc bc bc xx xx h7"
-                       " sb cb cb cb cb xx xx h6"
-                       " sb cb cb cb cb xx xx h5"
-                       " sb cb cb cb cb xx xx h4"
-                       " sb cb cb cb cb xx xx h3"
-                       " sb wc wc wc wc xx xx h2"
-                       " b1 c1 d1 e1 f1 xx xx h1"
-                       " b1 c1 d1 e1 f1 xx xx h1"
-                       " b1 c1 d1 e1 f1 xx xx h1";
+                       " hh yy yy bc bc bc bc xx xx h7"
+                       " zz bb cc cb cb cb cb xx xx h6"
+                       " zz bb cc cb cb cb cb xx xx h5"
+                       " zz bb cc cb cb cb cb xx xx h4"
+                       " zz bb cc cb cb cb cb xx xx h3"
+                       " zz bb cc wc wc wc wc xx xx h2"
+                       " zz bb cc c1 d1 e1 f1 xx xx h1"
+                       " zz bb cc c1 d1 e1 f1 xx xx h1"
+                       " zz bb cc c1 d1 e1 f1 xx xx h1";
   
   /* grid-auto-rows: minmax(100px, auto); */
   height: 100%;
@@ -158,6 +158,7 @@
   grid-area: bc;
   width: 400px;
   border: black 2px solid;
+  visibility: hidden;
 }
 
 #white-captures{
@@ -171,13 +172,13 @@
   grid-area: wc;
   width: 400px;
   border: black 2px solid;
+  visibility: hidden;
 }
 
 .black-square {
     font-size: 50px;
     text-align: center;
     background-color: rgb(182, 172, 172);
-    z-index: 0;
 }
 .captured{
   background-color: antiquewhite;

@@ -37,13 +37,13 @@ body {
   height: 200px;
   /* border: 3px solid rgb(168, 241, 168); */
   grid-area: cb;
-  background-color: rgb(214, 200, 194);
-  height: 400px;
+  /* background-color: rgb(214, 200, 194); */
+  /* height: 400px; */
   width: 400px;
-  align-items: center;
-  align-content: center;
-  border-radius: 4px;
-  opacity: 95%;
+  /* align-items: center;
+  align-content: center; */
+  /* border-radius: 4px; */
+  /* opacity: 95%; */
   /* z-index: 1; */
   
 }

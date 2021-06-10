@@ -53,6 +53,10 @@
   /* grid-area: d8; */
 }
 
+#three-boards{
+  visibility: hidden;
+}
+
 .letter-label{
   color: white;
   background-color: rgb(8, 8, 8);

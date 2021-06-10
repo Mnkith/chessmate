@@ -56,8 +56,6 @@ squares.forEach( (square) => square.addEventListener( 'click', () => {
 //   board.style.visibility = 'visible'
 //   game.persist()
 //   Game.fetchGame()
-
-
 // })
 
 // let game = new Game('ev')

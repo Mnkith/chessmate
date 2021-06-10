@@ -58,7 +58,7 @@ class Game {
             pieceObj.capture(e.target)
             // e.target.style.gridArea = p.position
             Game.updateTurn()
-            controller.abort()
+            // controller.abort()
             // const capturedPiece = e.target
             // const capturesContainer = document.getElementById(`${selectedPieceColor}-captures`)
             // this.selectedPiece.style.border = ''

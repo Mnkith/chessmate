@@ -13,7 +13,7 @@ class GamesController < ApplicationController
     # p params
 
     # binding.pry
-    game = Game.create game_params
+    game = Game.create 
     Game.find_by_id(1).pieces.each do |p| 
       # binding.pry
        game.pieces << Piece.new(name: p.name, symbol: p.symbol, color: p.color, position: p.position, initial: p.initial)
@@ -22,7 +22,7 @@ class GamesController < ApplicationController
 
 
   private
-  def game_params
-    params.require(:game).permit(:event, :site, :white, :black)
-  end
+  # def game_params
+  #   params.require(:game).permit(:event, :site, :white, :black)
+  # end
 end

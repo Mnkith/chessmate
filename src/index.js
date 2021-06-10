@@ -20,7 +20,23 @@ const squares = document.querySelectorAll('.square')
 setSquaresIds()
 Menu.show('main-menu')
 
-newGameBtn.addEventListener('click', () => { Menu.show('new-game-menu') })
+newGameBtn.addEventListener('click', (e) => { 
+  e.preventDefault()
+  e.stopPropagation()
+  // const ev = document.getElementById('event').value
+  // const site = document.getElementById('site').value
+  // const white = document.getElementById('white').value
+  // const black = document.getElementById('black').value
+  // let game = new Game(ev, site, white, black)
+  let game = new Game()
+  document.body.style.backgroundColor = 'black'
+  document.body.style.backgroundImage = ""
+  mainMenu.style.visibility = 'hidden'
+  newGameMenu.style.visibility = 'hidden'
+  board.style.visibility = 'visible'
+  game.persist()
+  Game.fetchGame()
+})
 
 backBtn.addEventListener('click', (e) => { Menu.show('main-menu')})
 

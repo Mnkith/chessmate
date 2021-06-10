@@ -2,7 +2,7 @@ class Game {
   // static currentGame = 'kkk'
   static turn = 'white'
   static selectedPiece = ''
-  constructor(event, site = '', white = 'White', black = 'Black') {
+  constructor(event = '', site = '', white = 'White', black = 'Black') {
     this.event = event
     // this.site = site
     // this.white = white

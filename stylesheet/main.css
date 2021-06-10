@@ -112,10 +112,11 @@ body {
   display: inline-block;
   font-size: 16px;
   margin: 4px 2px;
-  border-radius: 4px;
+  border-radius: 8px;
   visibility: inherit;
   opacity: 100%;
   margin-top: 60px;
+  
 
 }
 

@@ -1,5 +1,5 @@
 class Menu {
-  static _menus = ['main-menu', 'new-game-menu', 'in-game-menu', 'three-boards']
+  static _menus = ['main-menu', 'new-game-menu', 'three-boards']
 
   static show(menu){
     Menu._menus.forEach( (men) => {

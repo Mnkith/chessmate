@@ -18,20 +18,22 @@ const squares = document.querySelectorAll('.square')
 
 
 setSquaresIds()
-Menu.show('main-menu')
+'DOMContentLoaded', Menu.show('main-menu')
 
 newGameBtn.addEventListener('click', () => {
   // mainMenu.style.zIndex = -1
-  mainMenu.style.visibility = 'hidden'
-  newGameMenu.style.visibility = 'visible'
+  // console.log('fff')
+  Menu.show('new-game-menu')
+  // mainMenu.style.visibility = 'hidden'
+  // newGameMenu.style.visibility = 'visible'
   // newGameMenu
 })
 
-// backBtn.addEventListener('click', (e) => {
-//   e.preventDefault()
-//   mainMenu.style.zIndex = 5
-//   // e.stopPropagation()
-// })
+backBtn.addEventListener('click', (e) => {
+  e.preventDefault()
+  mainMenu.style.zIndex = 5
+  // e.stopPropagation()
+})
 
 function setSquaresIds() {
   squares.forEach(square => square.id = square.style.gridArea.substr(0, 2))

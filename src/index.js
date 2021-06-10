@@ -18,7 +18,7 @@ const squares = document.querySelectorAll('.square')
 
 
 setSquaresIds()
-Menu.show('new-game-menu')
+Menu.show('main-menu')
 
 newGameBtn.addEventListener('click', () => {
   // mainMenu.style.zIndex = -1

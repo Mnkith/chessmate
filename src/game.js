@@ -51,7 +51,7 @@ class Game {
 
   static initializeBoard(game) {
     // const controller = new AbortController();
-    console.log(game.event)
+    // console.log(game.event)
     // console.log(game.pieces)
     game.pieces.forEach(p => {
       const pieceObj = new Piece(p)
@@ -64,9 +64,8 @@ class Game {
           // this.selectedPiece.style.border = ''
           if (this.selectedPiece.dataset.color === e.target.dataset.color) {
             this.selectedPiece.style.border = ''
-            this.selectedPiece = ''
-            // e.currentTarget.style.border
-            // e.target.style.border = '3px dashed rgb(238, 42, 8)'
+            this.selectedPiece = e.target
+            e.target.style.border = '3px dashed rgb(238, 42, 8)'
           }
           else {
             pieceObj.capture(e.target)
@@ -90,7 +89,7 @@ class Game {
   }
 
 
-  persist() {
+  persistAndRetrieve() {
     console.log('persist')
     fetch("http://127.0.0.1:3000/games", {
       method: "POST",

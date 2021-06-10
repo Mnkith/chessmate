@@ -25,7 +25,7 @@ newGameBtn.addEventListener('click', (e) => {
   e.stopPropagation()
   const game = new Game('last99')
   game.setScene()
-  game.persist()
+  game.persistAndRetrieve()
   // Game.fetchGame()
 })
 

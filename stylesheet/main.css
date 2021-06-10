@@ -127,18 +127,19 @@ body {
   /* background-color: rgb(7, 7, 7); */
   /* gap: 1px; */
   /* padding: 1px; */
-  grid-template-rows: repeat(10, 1fr);
+  grid-template-rows: 100px repeat(8, 1fr);
   grid-template-columns: repeat(10, 1fr) ;
-  grid-template-areas: "nb nb nb nb nb nb nb nb nb nb"
-                       "sb sb sb bc bc bc bc xx xx h7"
-                       "sb sb sb cb cb cb cb xx xx h6"
-                       "sb sb sb cb cb cb cb xx xx h5"
-                       "sb sb sb cb cb cb cb xx xx h4"
-                       "sb sb sb cb cb cb cb xx xx h3"
-                       "sb sb sb wc wc wc wc xx xx h2"
-                       "a1 a1 b1 c1 d1 e1 f1 xx xx h1"
-                       "a1 a1 b1 c1 d1 e1 f1 xx xx h1"
-                       "a1 a1 b1 c1 d1 e1 f1 xx xx h1";
+  grid-template-areas:
+                       /* "nb nb nb nb nb nb nb nb nb nb" */
+                       " sb bc bc bc bc xx xx h7"
+                       " sb cb cb cb cb xx xx h6"
+                       " sb cb cb cb cb xx xx h5"
+                       " sb cb cb cb cb xx xx h4"
+                       " sb cb cb cb cb xx xx h3"
+                       " sb wc wc wc wc xx xx h2"
+                       " b1 c1 d1 e1 f1 xx xx h1"
+                       " b1 c1 d1 e1 f1 xx xx h1"
+                       " b1 c1 d1 e1 f1 xx xx h1";
   
   /* grid-auto-rows: minmax(100px, auto); */
   height: 100%;

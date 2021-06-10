@@ -1,8 +1,8 @@
 // let game = new Game('eeeee')
 // console.log(game)
 // game.persist()
-// document.body.style.backgroundImage = "url('chess.jpg')"
-// document.body.style.backgroundRepeat = 'no-repeat'
+document.body.style.backgroundImage = "url('chess.jpg')"
+document.body.style.backgroundRepeat = 'no-repeat'
 
 document.body.style.backgroundColor = 'black'
 const mainMenu = document.getElementById('main')

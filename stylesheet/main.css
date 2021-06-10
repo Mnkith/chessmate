@@ -1,3 +1,10 @@
+body {
+  background-image: url('example_img_girl.jpg');
+  background-repeat: no-repeat;
+}
+
+
+
 .wrapper {
   /* visibility: hidden; */
   display: grid;
@@ -76,7 +83,7 @@
   /* align-items: center; */
   height: 200px;
   /* border: 3px solid rgb(168, 241, 168); */
-  /* grid-area: cb; */
+  grid-area: cb;
   background-color: rgb(214, 200, 194);
   font-size: xlarge;
   height: 400px;
@@ -96,7 +103,7 @@
   display:block;
   /* height: 40px; */
   width: 98%;
-  background-color: #484bf1;
+  background-color: #242438;
   border: none;
   color: white;
   padding: 20px;

@@ -5,6 +5,7 @@ class Piece {
     this.symbol = p.symbol
     this.color = p.color
     this.position = p.position
+    this.default_position = p.default_position
     this.initial = p.initial
   }
 
@@ -27,7 +28,7 @@ class Piece {
     pieceDiv.dataset.color = this.color
     pieceDiv.style.gridArea = this.position
     pieceDiv.innerHTML = this.symbol
-    pieceDiv.dataset.defaultPos = this.position
+    pieceDiv.dataset.defaultPos = this.default_position
     return pieceDiv
   }
 

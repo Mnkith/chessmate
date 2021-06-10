@@ -17,9 +17,12 @@ const squares = document.querySelectorAll('.square')
 
 setSquaresIds()
 
-// newGameBtn.addEventListener('click', () => {
-//   mainMenu.style.zIndex = -1
-// })
+newGameBtn.addEventListener('click', () => {
+  // mainMenu.style.zIndex = -1
+  mainMenu.style.visibility = 'hidden'
+  newGameMenu.style.visibility = 'visible'
+  // newGameMenu
+})
 
 // backBtn.addEventListener('click', (e) => {
 //   e.preventDefault()
@@ -41,22 +44,22 @@ squares.forEach( (square) => square.addEventListener( 'click', () => {
 }))
 
 
-// startGameBtn.addEventListener('click', (e) => {
-//   e.preventDefault()
-//   e.stopPropagation()
-//   const ev = document.getElementById('event').value
-//   const site = document.getElementById('site').value
-//   const white = document.getElementById('white').value
-//   const black = document.getElementById('black').value
-//   let game = new Game(ev, site, white, black)
-//   document.body.style.backgroundColor = 'black'
-//   document.body.style.backgroundImage = ""
-//   mainMenu.style.visibility = 'hidden'
-//   newGameMenu.style.visibility = 'hidden'
-//   board.style.visibility = 'visible'
-//   game.persist()
-//   Game.fetchGame()
-// })
+startGameBtn.addEventListener('click', (e) => {
+  e.preventDefault()
+  e.stopPropagation()
+  const ev = document.getElementById('event').value
+  const site = document.getElementById('site').value
+  const white = document.getElementById('white').value
+  const black = document.getElementById('black').value
+  let game = new Game(ev, site, white, black)
+  document.body.style.backgroundColor = 'black'
+  document.body.style.backgroundImage = ""
+  mainMenu.style.visibility = 'hidden'
+  newGameMenu.style.visibility = 'hidden'
+  board.style.visibility = 'visible'
+  game.persist()
+  Game.fetchGame()
+})
 
 // let game = new Game('ev')
 // game.persist()

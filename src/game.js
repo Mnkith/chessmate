@@ -4,9 +4,9 @@ class Game {
   static selectedPiece = ''
   constructor(event, site = '', white = 'White', black = 'Black') {
     this.event = event
-    this.site = site
-    this.white = white
-    this.black = black
+    // this.site = site
+    // this.white = white
+    // this.black = black
     // this.piecs = pieces
   }
   // static createNewGame(event, site = '', white = 'White', black = 'Black', pieces = []) {

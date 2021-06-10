@@ -16,18 +16,26 @@
 
 
     <div id='main-menu' class='main-menu'>
-      <button id='new-game' class='menu-btn' type="button">Start New Game!</button>
+      <form action="http://localhost:3000/games" method="POST">
+        <!-- <label> Event: <input type="text" name="event" id="event" /></label><br /> -->
+        <!-- <label> Site: <input type="text" name="site" id="site" /></label><br />
+        <label> White player: <input type="text" name="site" id="white" /></label><br />
+        <label> Black player: <input type="text" name="site" id="black" /></label><br /> -->
+        <input id='new-game' type="submit" class='menu-btn' name="submit" id="submit" value="Start New Game" />
+      </form>
+      
+      <!-- <button id='new-game' class='menu-btn' type="button">Start New Game!</button> -->
       <button id='existing-game' class='menu-btn' type="button">Retrieve Game</button>
     </div>
 
     <div id='new-game-menu'>
-      <form action="http://localhost:3000/games" method="POST">
+      <!-- <form action="http://localhost:3000/games" method="POST">
         <label> Event: <input type="text" name="event" id="event" /></label><br />
         <!-- <label> Site: <input type="text" name="site" id="site" /></label><br />
         <label> White player: <input type="text" name="site" id="white" /></label><br />
         <label> Black player: <input type="text" name="site" id="black" /></label><br /> -->
         <input id='start-game' type="submit" class='menu-btn' name="submit" id="submit" value="start game" />
-      </form>
+      </form> -->
       <button id='back-to-main' class='menu-btn' type="button">back to main menyu</button>
     </div>
 

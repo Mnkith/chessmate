@@ -6,20 +6,20 @@
   background-color: rgb(7, 7, 7);
   gap: 1px;
   /* padding: 1px; */
-  grid-template-rows: repeat(8, 1fr);
-  grid-template-columns: repeat(8, 1fr);
-  grid-template-areas: "a8 b8 c8 d8 e8 f8 g8 h8"
-                       "a7 b7 c7 d7 e7 f7 g7 h7"
-                       "a6 b6 c6 d6 e6 f6 g6 h6"
-                       "a5 b5 c5 d5 e5 f5 g5 h5"
-                       "a4 b4 c4 d4 e4 f4 g4 h4"
-                       "a3 b3 c3 d3 e3 f3 g3 h3"
-                       "a2 b2 c2 d2 e2 f2 g2 h2"
-                       "a1 b1 c1 d1 e1 f1 g1 h1";
-  
+  grid-template-rows: repeat(8, 1fr) 20px;
+  grid-template-columns: repeat(8, 1fr) 10px;
+  grid-template-areas: "a8 b8 c8 d8 e8 f8 g8 h8 n8"
+                       "a7 b7 c7 d7 e7 f7 g7 h7 n7"
+                       "a6 b6 c6 d6 e6 f6 g6 h6 n6"
+                       "a5 b5 c5 d5 e5 f5 g5 h5 n5"
+                       "a4 b4 c4 d4 e4 f4 g4 h4 n4"
+                       "a3 b3 c3 d3 e3 f3 g3 h3 n3"
+                       "a2 b2 c2 d2 e2 f2 g2 h2 n2"
+                       "a1 b1 c1 d1 e1 f1 g1 h1 n1"
+                       "la lb lc ld le lf lg lh xx";
   /* grid-auto-rows: minmax(100px, auto); */
-  height: 480px;
-  width: 480px;
+  height: 420px;
+  width: 410px;
   grid-area: cb;
   cursor: pointer;
 }
@@ -39,6 +39,31 @@
   opacity: 95%;
   z-index: 1;
   
+}
+
+.digit-label{
+  color: white;
+  background-color: rgb(5, 5, 5);
+  text-align: left;
+  padding-top: 8px;
+  font-family: cursive;
+  text-align: center;
+  font-size:medium;
+  
+  /* grid-area: d8; */
+}
+
+.letter-label{
+  color: white;
+  background-color: rgb(8, 8, 8);
+  text-align: left;
+  /* padding-top: 8px; */
+  padding-bottom: 5px;
+  font-family: cursive;
+  text-align: center;
+  font-size:medium;
+  
+  /* grid-area: d8; */
 }
 
 #new-game-menu{
@@ -115,9 +140,9 @@
   grid-template-columns: repeat(8, 1fr);
   grid-template-areas: "a1 b1 c1 d1 e1 f1 g1 h1"
                        "a2 b2 c2 d2 e2 f2 g2 h2";
-  background-color: rgb(0, 0, 0);
+  background-color: rgb(167, 118, 118);
   grid-area: bc;
-  width: 480px;
+  width: 400px;
   border: black 2px solid;
 }
 
@@ -128,9 +153,9 @@
   grid-template-columns: repeat(8, 1fr);
   grid-template-areas: "a7 b7 c7 d7 e7 f7 g7 h7"
                        "a8 b8 c8 d8 e8 f8 g8 h8";
-  background-color: rgb(0, 0, 0);
+  background-color: rgb(167, 118, 118);
   grid-area: wc;
-  width: 480px;
+  width: 400px;
   border: black 2px solid;
 }
 
@@ -140,9 +165,17 @@
     background-color: rgb(182, 172, 172);
     z-index: 0;
 }
-.piece {
+.captured{
+  background-color: antiquewhite;
   font-size: iem;
+  text-align: center;
+  z-index: 9;
+  user-select: none; 
+}
+.piece {
+  font-size: 2rem;
     text-align: center;
+    user-select: none; 
     z-index: 9;
 }
 

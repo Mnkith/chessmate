@@ -1,5 +1,6 @@
 class Game {
   // static currentGame = 'kkk'
+  static turn = 'white'
   static selectedPiece = ''
   constructor(event, site = '', white = 'White', black = 'Black') {
     this.event = event
@@ -31,44 +32,52 @@ class Game {
       .then(json => this.initializeBoard(json));
   }
 
+  static updateTurn() {
+    return Game.turn == 'black' ? Game.turn = 'white' : Game.turn = 'black'
+  }
+
   static initializeBoard(game) {
-    //  console.log(game)
-    const pieces = game.pieces
+    const controller = new AbortController();
     const board = document.getElementById('board')
-    pieces.forEach(p => {
-      const div = document.createElement('div')
-      const square = document.getElementById(p.position)
-      square.dataset.occupant = p.symbol
-      div.className = 'piece'
-      div.dataset.color = p.color
-      div.innerHTML = p.symbol
-      div.style.gridArea = p.position
+    game.pieces.forEach(p => {
+      const pieceObj = new Piece(p)
+      const div = pieceObj.toDiv
       div.addEventListener('click', (e) => {
         e.stopPropagation()
-        if (this.selectedPiece) {
-          const selectedPieceColor = this.selectedPiece.dataset.color
-          if (selectedPieceColor === e.target.dataset.color){
+        if (e.target.dataset.color != Game.turn && !this.selectedPiece)
+          alert(`its ${Game.turn}'s turn`)
+        else if (this.selectedPiece) {
+          // this.selectedPiece.style.border = ''
+          if (this.selectedPiece.dataset.color === e.target.dataset.color) {
             this.selectedPiece.style.border = ''
             this.selectedPiece = ''
+            // e.currentTarget.style.border
+            // e.target.style.border = '3px dashed rgb(238, 42, 8)'
           }
-          else{
-            const capturedPiece = e.target
-            const capturesContainer = document.getElementById(`${selectedPieceColor}-captures`)
-            this.selectedPiece.style.border = ''
-            this.selectedPiece.style.gridArea = capturedPiece.style.gridArea
-            capturedPiece.style.border = ''
-            // capturedPiece.removeEventListener()
-            capturesContainer.appendChild(capturedPiece)
-            this.selectedPiece = ''
+          else {
+            pieceObj.capture(e.target)
+            // e.target.style.gridArea = p.position
+            Game.updateTurn()
+            controller.abort()
+            // const capturedPiece = e.target
+            // const capturesContainer = document.getElementById(`${selectedPieceColor}-captures`)
+            // this.selectedPiece.style.border = ''
+            // this.selectedPiece.style.gridArea = capturedPiece.style.gridArea
+            // capturedPiece.style.border = ''
+            // capturedPiece.className = 'captured'
+            // // capturedPiece.disabled = true
+            // // capturedPiece.removeEventListener()
+            // capturesContainer.appendChild(capturedPiece)
+            // this.selectedPiece = ''
           }
 
         }
-        else{
+        else {
+          div.style.border = '3px dashed rgb(238, 42, 8)'
           this.selectedPiece = div
-        div.style.border = '3px dashed rgb(238, 42, 8)'
         }
-        
-      })
+
+      }, { signal: controller.signal })
 
       board.appendChild(div)
     })

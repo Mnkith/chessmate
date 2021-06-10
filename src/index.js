@@ -34,10 +34,9 @@ function setSquaresIds() {
 squares.forEach( (square) => square.addEventListener( 'click', () => {
   if(Game.selectedPiece){
     Game.selectedPiece.style.gridArea = square.style.gridArea
-    Game.selectedPiece
     Game.selectedPiece.style.border = ''
     Game.selectedPiece = ''
-
+    Game.updateTurn()
   }
 }))
 
@@ -61,9 +60,9 @@ squares.forEach( (square) => square.addEventListener( 'click', () => {
 
 // })
 
-let game = new Game('ev')
-game.persist()
-Game.fetchGame()
+// let game = new Game('ev')
+// game.persist()
+Game.fetchGame(1)
 
 // window.addEventListener('DOMContentLoaded', (event) => {
 //   console.log('DOM fully loaded and parsed');

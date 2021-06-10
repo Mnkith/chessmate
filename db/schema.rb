@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(version: 2021_06_04_032504) do
     t.string "symbol"
     t.string "color"
     t.string "position"
+    t.string "default_position"
     t.string "initial"
     t.integer "game_id"
     t.datetime "created_at", precision: 6, null: false

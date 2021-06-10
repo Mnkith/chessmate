@@ -2,11 +2,12 @@ class Game {
   // static currentGame = 'kkk'
   static turn = 'white'
   static selectedPiece = ''
+
   constructor(event = '', site = '', white = 'White', black = 'Black') {
     this.event = event
-    // this.site = site
-    // this.white = white
-    // this.black = black
+    this.site = site
+    this.white = white
+    this.black = black
     // this.piecs = pieces
   }
   // static createNewGame(event, site = '', white = 'White', black = 'Black', pieces = []) {
@@ -26,10 +27,22 @@ class Game {
   //   // .then(json => initializeBoard(json));
   // }
 
-  static fetchGame(round = 1) {
+  static fetchGame(round = 0) {
+    console.log('fetch')
     fetch(`http://127.0.0.1:3000/games/${round}`)
       .then(resp => resp.json())
-      .then(json => this.initializeBoard(json));
+      .then(game => this.initializeBoard(game));
+  }
+
+  setScene() {
+    console.log('setScene')
+    document.body.style.backgroundColor = 'black'
+    document.body.style.backgroundImage = ""
+    document.getElementById('main-menu').style.visibility = 'hidden'
+    document.getElementById('white-captures').style.visibility = 'visible'
+    document.getElementById('board').style.visibility = 'visible'
+    document.getElementById('white-captures').style.visibility = 'visible'
+    document.getElementById('black-captures').style.visibility = 'visible'
   }
 
   static updateTurn() {
@@ -37,8 +50,9 @@ class Game {
   }
 
   static initializeBoard(game) {
-    const controller = new AbortController();
-    const board = document.getElementById('board')
+    // const controller = new AbortController();
+    console.log(game.event)
+    // console.log(game.pieces)
     game.pieces.forEach(p => {
       const pieceObj = new Piece(p)
       const div = pieceObj.toDiv
@@ -59,16 +73,6 @@ class Game {
             // e.target.style.gridArea = p.position
             Game.updateTurn()
             // controller.abort()
-            // const capturedPiece = e.target
-            // const capturesContainer = document.getElementById(`${selectedPieceColor}-captures`)
-            // this.selectedPiece.style.border = ''
-            // this.selectedPiece.style.gridArea = capturedPiece.style.gridArea
-            // capturedPiece.style.border = ''
-            // capturedPiece.className = 'captured'
-            // // capturedPiece.disabled = true
-            // // capturedPiece.removeEventListener()
-            // capturesContainer.appendChild(capturedPiece)
-            // this.selectedPiece = ''
           }
 
         }
@@ -77,14 +81,17 @@ class Game {
           this.selectedPiece = div
         }
 
-      }, { signal: controller.signal })
+      }, 
+      // { signal: controller.signal }
+      )
 
-      board.appendChild(div)
+      document.getElementById('board').appendChild(div)
     })
   }
 
 
   persist() {
+    console.log('persist')
     fetch("http://127.0.0.1:3000/games", {
       method: "POST",
       headers: {
@@ -93,5 +100,7 @@ class Game {
       },
       body: JSON.stringify(this)
     })
+    .then(resp => resp.json())
+    .then(game => Game.fetchGame(game.id))
   }
 }

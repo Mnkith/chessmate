@@ -1,7 +1,14 @@
 class GamesController < ApplicationController
   def show
-    game = Game.find_by_id params[:id]
+    # binding.pry
+    
+    game = if params[:id] == '0'
+             Game.last
+           else
+             Game.find_by_id params[:id]
+           end
     render json: game, include: [:pieces]
+    p params[:id]
   end
 
   def index
@@ -13,16 +20,16 @@ class GamesController < ApplicationController
     # p params
 
     # binding.pry
-    game = Game.create 
-    Game.find_by_id(1).pieces.each do |p| 
+    game = Game.create game_params
+    Game.find_by_id(1).pieces.each do |p|
       # binding.pry
-       game.pieces << Piece.new(name: p.name, symbol: p.symbol, color: p.color, position: p.position, initial: p.initial)
+      game.pieces << Piece.new(name: p.name, symbol: p.symbol, color: p.color, position: p.position,
+                               initial: p.initial)
     end
+    render json: game, include: [:pieces]
   end
 
-
-  private
-  # def game_params
-  #   params.require(:game).permit(:event, :site, :white, :black)
-  # end
+  def game_params
+    params.require(:game).permit(:event, :site, :white, :black)
+  end
 end

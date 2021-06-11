@@ -24,7 +24,7 @@ class GamesController < ApplicationController
     Game.find_by_id(1).pieces.each do |p|
       # binding.pry
       game.pieces << Piece.new(name: p.name, symbol: p.symbol, color: p.color, position: p.position,
-                               initial: p.initial)
+                               initial: p.initial, default_position: p.position)
     end
     render json: game, include: [:pieces]
   end

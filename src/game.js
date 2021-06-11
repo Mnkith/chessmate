@@ -54,9 +54,10 @@ class Game {
     // console.log(game.event)
     // console.log(game.pieces)
     game.pieces.forEach(p => {
+      let handler
       const pieceObj = new Piece(p)
       const div = pieceObj.toDiv
-      div.addEventListener('click', (e) => {
+      div.addEventListener('click', handler = (e) => {
         e.stopPropagation()
         if (e.target.dataset.color != Game.turn && !this.selectedPiece)
           alert(`its ${Game.turn}'s turn`)
@@ -69,8 +70,9 @@ class Game {
           }
           else {
             pieceObj.capture(e.target)
+            e.target.removeEventListener('click', handler)
             // e.target.style.gridArea = p.position
-            Game.updateTurn()
+            
             // controller.abort()
           }
 

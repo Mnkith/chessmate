@@ -17,6 +17,7 @@ class Piece {
     captive.className = 'captured'
     Game.selectedPiece.style.gridArea = captive.style.gridArea
     captive.style.gridArea = captive.dataset.defaultPos
+    Game.updateTurn()
     capturesContainer.appendChild(captive)
     Game.selectedPiece.style.border = ''
     Game.selectedPiece = ''

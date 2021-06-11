@@ -100,6 +100,6 @@ class Game {
       body: JSON.stringify(this)
     })
     .then(resp => resp.json())
-    .then(game => Game.fetchGame(game.id))
+    .then(game => Game.fetchGame(2))
   }
 }

@@ -35,8 +35,7 @@ class Piece {
         Accept: "application/json",
       },
       body: JSON.stringify({
-        
-        position: this.position,
+        position: this.position
       }),
     })
   }

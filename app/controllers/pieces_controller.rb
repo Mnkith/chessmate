@@ -11,9 +11,10 @@ class PiecesController < ApplicationController
   end
 
   def update
-    binding.pry
+    # binding.pry
     pieces = Game.find_by_id(params[:game_id]).pieces
     pieces.select { |piece| piece[:id] == params[:id].to_i }[0].update(piece_params)
+    # Game.find_by_id(params[:game_id]).save
   end
 
   private

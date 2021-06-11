@@ -58,13 +58,13 @@ squares.forEach( (square) => square.addEventListener( 'click', () => {
     // }, 1005);
     
     // console.log(square.offsetLeft)
-    console.log(t.offsetTop)
-    console.log(t.offsetParent)
-    console.log(t.parentElement)
-    console.log(square.offsetTop)
-    console.log(square.offsetParent)
-    console.log(square.parentElement)
-    console.log('&&&&&&&&&&&&&&&')
+    // console.log(t.offsetTop)
+    // console.log(t.offsetParent)
+    // console.log(t.parentElement)
+    // console.log(square.offsetTop)
+    // console.log(square.offsetParent)
+    // console.log(square.parentElement)
+    // console.log('&&&&&&&&&&&&&&&')
   }
 }))
 

@@ -21,6 +21,23 @@ class Piece {
     Game.switchTurn()
   }
 
+  set updatePosision(){
+    fetch(`http://localhost:3000/toys/${e.target.id}`, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: JSON.stringify({
+        likes: parseInt(e.target.dataset.likes) + 1,
+      }),
+    })
+      .then((resp) => resp.json())
+      .then((toy) => {
+        document.getElementById(toy.id).innerText = toy.likes;
+      });
+  }
+
   get toDiv() {
     const pieceDiv = document.createElement('div')
     pieceDiv.className = 'piece'

@@ -45,7 +45,7 @@ class Game {
     document.getElementById('black-captures').style.visibility = 'visible'
   }
 
-  static updateTurn() {
+  static switchTurn() {
     return Game.turn == 'black' ? Game.turn = 'white' : Game.turn = 'black'
   }
 
@@ -61,7 +61,11 @@ class Game {
         if (e.target.dataset.color != Game.turn && !this.selectedPiece)
           alert(`its ${Game.turn}'s turn`)
         else if (this.selectedPiece) {
-          if (this.selectedPiece.dataset.color === e.target.dataset.color) {
+          if (this.selectedPiece.dataset.defaultPos === e.target.dataset.defaultPos){
+            e.target.style.border = ''
+            this.selectedPiece = ''
+          }
+          else if(this.selectedPiece.dataset.color === e.target.dataset.color) {
             this.selectedPiece.style.border = ''
             this.selectedPiece = e.target
             e.target.style.border = '3px dashed rgb(238, 42, 8)'

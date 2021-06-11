@@ -40,7 +40,7 @@ squares.forEach( (square) => square.addEventListener( 'click', () => {
     Game.selectedPiece.style.gridArea = square.style.gridArea
     Game.selectedPiece.style.border = ''
     Game.selectedPiece = ''
-    Game.updateTurn()
+    Game.switchTurn()
   }
 }))
 

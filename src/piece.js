@@ -18,7 +18,7 @@ class Piece {
     capturesContainer.appendChild(captive)
     Game.selectedPiece.style.border = ''
     Game.selectedPiece = ''
-    Game.updateTurn()
+    Game.switchTurn()
   }
 
   get toDiv() {

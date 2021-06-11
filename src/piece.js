@@ -15,8 +15,12 @@ class Piece {
     captive.style.border = ''
     captive.className = 'captured'
     Game.selectedPiece.style.gridArea = captive.style.gridArea
+    Game.selectedPiece.dataset.position = captive.style.gridArea.slice(0, 2)
+    console.log( captive)
+
+    console.log(this.selectedPiece.dataset.id)
     this.position = captive.style.gridArea.slice(0, 2)
-    console.log(this.position )
+    console.log(this)
     // console.log('before', this.position)
     this.updatePosision()
     captive.style.gridArea = captive.dataset.defaultPos
@@ -28,7 +32,7 @@ class Piece {
   }
 
   updatePosision(){
-    fetch(`http://localhost:3000/games/${Game.currentGameId}/pieces/${this.id}`, {
+    fetch(`http://localhost:3000/games/${Game.currentGameId}/pieces/${Game.selectedPiece.dataset.id}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",

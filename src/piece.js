@@ -15,33 +15,35 @@ class Piece {
     captive.style.border = ''
     captive.className = 'captured'
     Game.selectedPiece.style.gridArea = captive.style.gridArea
+    this.position = captive.style.gridArea.slice(0, 2)
+    console.log(this.position )
+    // console.log('before', this.position)
+    this.updatePosision()
     captive.style.gridArea = captive.dataset.defaultPos
+    // console.log(this.position)
     capturesContainer.appendChild(captive)
     Game.selectedPiece.style.border = ''
     Game.selectedPiece = ''
     Game.switchTurn()
   }
 
-  set updatePosision(){
-    fetch(`http://localhost:3000/games/${Game.currentGameId}/${this.id}`, {
+  updatePosision(){
+    fetch(`http://localhost:3000/games/${Game.currentGameId}/pieces/${this.id}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",
         Accept: "application/json",
       },
       body: JSON.stringify({
+        
         position: this.position,
       }),
     })
-      .then((resp) => resp.json())
-      .then((toy) => {
-        document.getElementById(toy.id).innerText = toy.likes;
-      });
   }
 
   toDiv() {
     const pieceDiv = document.createElement('div')
-    dispatchEvent.dataset.id = this.id
+    pieceDiv.dataset.id = this.id
     pieceDiv.className = 'piece'
     pieceDiv.dataset.color = this.color
     pieceDiv.style.gridArea = this.position

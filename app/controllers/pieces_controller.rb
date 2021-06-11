@@ -1,16 +1,24 @@
 class PiecesController < ApplicationController
   def index
-    pieces = Piece.all 
+    pieces = Piece.all
     render json: pieces
+  end
+
+  def show
+    pieces = Game.find_by_id(params[:game_id]).pieces
+    p = pieces.select { |piece| piece[:id] == params[:id].to_i }[0]
+    render json: p
   end
 
   def update
     binding.pry
     pieces = Game.find_by_id(params[:game_id]).pieces
-    pieces.find
+    pieces.select { |piece| piece[:id] == params[:id].to_i }[0].update(piece_params)
   end
-private
+
+  private
+
   def piece_params
-    params.require(:piece).permit(position)
+    params.require(:piece).permit(:position)
   end
 end

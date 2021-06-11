@@ -6,6 +6,6 @@ class PiecesController < ApplicationController
 
   def update
     binding.pry
-    game = Game.find_by_id(params[:id]).pieces
+    game = Game.find_by_id(params[:game_id]).pieces
   end
 end

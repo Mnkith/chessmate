@@ -2,6 +2,7 @@ class Game {
   // static currentGame = 'kkk'
   static turn = 'white'
   static selectedPiece = ''
+  static currentGameId = 0
 
   constructor(event = '', site = '', white = 'White', black = 'Black') {
     this.event = event
@@ -28,7 +29,7 @@ class Game {
   // }
 
   static fetchGame(round = 0) {
-    console.log('fetch')
+    Game.currentGameId = round
     fetch(`http://127.0.0.1:3000/games/${round}`)
       .then(resp => resp.json())
       .then(game => this.initializeBoard(game));
@@ -90,7 +91,6 @@ class Game {
 
 
   persistAndRetrieve() {
-    console.log('persist')
     fetch("http://127.0.0.1:3000/games", {
       method: "POST",
       headers: {

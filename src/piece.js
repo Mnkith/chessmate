@@ -22,7 +22,7 @@ class Piece {
   }
 
   set updatePosision(){
-    fetch(`http://localhost:3000/toys/${e.target.id}`, {
+    fetch(`http://localhost:3000/games/${e.target.id}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",

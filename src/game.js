@@ -57,7 +57,7 @@ class Game {
     game.pieces.forEach(p => {
       let handler
       const pieceObj = new Piece(p)
-      const div = pieceObj.toDiv
+      const div = pieceObj.toDiv()
       div.addEventListener('click', handler = (e) => {
         if (e.target.dataset.color != Game.turn && !this.selectedPiece)
           alert(`its ${Game.turn}'s turn`)

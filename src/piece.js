@@ -1,6 +1,7 @@
 class Piece {
   static selectedPiece = ''
   constructor(p) {
+    this.id = p.id
     this.name = p.name
     this.symbol = p.symbol
     this.color = p.color
@@ -22,14 +23,14 @@ class Piece {
   }
 
   set updatePosision(){
-    fetch(`http://localhost:3000/games/${e.target.id}`, {
+    fetch(`http://localhost:3000/games/${Game.currentGameId}/${this.id}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",
         Accept: "application/json",
       },
       body: JSON.stringify({
-        likes: parseInt(e.target.dataset.likes) + 1,
+        position: this.position,
       }),
     })
       .then((resp) => resp.json())
@@ -38,8 +39,9 @@ class Piece {
       });
   }
 
-  get toDiv() {
+  toDiv() {
     const pieceDiv = document.createElement('div')
+    dispatchEvent.dataset.id = this.id
     pieceDiv.className = 'piece'
     pieceDiv.dataset.color = this.color
     pieceDiv.style.gridArea = this.position

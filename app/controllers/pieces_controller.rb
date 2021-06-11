@@ -6,6 +6,11 @@ class PiecesController < ApplicationController
 
   def update
     binding.pry
-    game = Game.find_by_id(params[:game_id]).pieces
+    pieces = Game.find_by_id(params[:game_id]).pieces
+    pieces.find
+  end
+private
+  def piece_params
+    params.require(:piece).permit(position)
   end
 end

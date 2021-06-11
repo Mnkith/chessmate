@@ -24,6 +24,7 @@
 .wrapper {
   /* visibility: hidden; */
   display: grid;
+  position:relative; 
   font-size: 35px;
   border: black 2px solid;
   background-color: rgb(7, 7, 7);

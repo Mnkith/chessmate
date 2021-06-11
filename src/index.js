@@ -38,10 +38,33 @@ function setSquaresIds() {
 
 squares.forEach( (square) => square.addEventListener( 'click', () => {
   if(Game.selectedPiece){
-    Game.selectedPiece.style.gridArea = square.style.gridArea
+    const sParent = square.parentElement
+    const t = Game.selectedPiece
+    t.animate([
+      // keyframes
+      { transform: `translateY(${t.offsetTop}px)` },
+      { transform: `translateY(${square.offsetTop}px)` }
+    ], {
+      // timing options
+      duration: 1000,
+      // iterations: Infinity
+    })
+    setTimeout(() => {
+      Game.selectedPiece.style.gridArea = square.style.gridArea
     Game.selectedPiece.style.border = ''
     Game.selectedPiece = ''
     Game.switchTurn()
+      
+    }, 1005);
+    
+    // console.log(square.offsetLeft)
+    console.log(t.offsetTop)
+    console.log(t.offsetParent)
+    console.log(t.parentElement)
+    console.log(square.offsetTop)
+    console.log(square.offsetParent)
+    console.log(square.parentElement)
+    console.log('&&&&&&&&&&&&&&&')
   }
 }))
 

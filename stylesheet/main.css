@@ -29,9 +29,11 @@
   background-color: rgb(7, 7, 7);
   gap: 1px;
   /* padding: 1px; */
-  grid-template-rows: repeat(8, 1fr) 20px;
+  grid-template-rows: repeat(10, 1fr) 20px 1fr 1fr;
   grid-template-columns: repeat(8, 1fr) 10px;
-  grid-template-areas: "a8 b8 c8 d8 e8 f8 g8 h8 n8"
+  grid-template-areas: "bc bc bc bc bc bc bc bc xx"
+                       "bc bc bc bc bc bc bc bc xx"
+                       "a8 b8 c8 d8 e8 f8 g8 h8 n8"
                        "a7 b7 c7 d7 e7 f7 g7 h7 n7"
                        "a6 b6 c6 d6 e6 f6 g6 h6 n6"
                        "a5 b5 c5 d5 e5 f5 g5 h5 n5"
@@ -39,7 +41,10 @@
                        "a3 b3 c3 d3 e3 f3 g3 h3 n3"
                        "a2 b2 c2 d2 e2 f2 g2 h2 n2"
                        "a1 b1 c1 d1 e1 f1 g1 h1 n1"
-                       "la lb lc ld le lf lg lh xx";
+                       "la lb lc ld le lf lg lh xx"
+                       "wc wc wc wc wc wc wc wc xx"
+                       "wc wc wc wc wc wc wc wc xx"
+                       ;
   /* grid-auto-rows: minmax(100px, auto); */
   height: 420px;
   width: 410px;
@@ -136,12 +141,12 @@
   grid-template-rows: 100px repeat(8, 1fr);
   grid-template-columns: repeat(10, 1fr) ;
   grid-template-areas:
-                       " hh yy yy bc bc bc bc xx xx h7"
+                       " hh yy yy cb cb cb cb xx xx h7"
                        " zz bb cc cb cb cb cb xx xx h6"
                        " zz bb cc cb cb cb cb xx xx h5"
                        " zz bb cc cb cb cb cb xx xx h4"
                        " zz bb cc cb cb cb cb xx xx h3"
-                       " zz bb cc wc wc wc wc xx xx h2"
+                       " zz bb cc cb cb cb cb xx xx h2"
                        " zz bb cc c1 d1 e1 f1 xx xx h1"
                        " zz bb cc c1 d1 e1 f1 xx xx h1"
                        " zz bb cc c1 d1 e1 f1 xx xx h1";

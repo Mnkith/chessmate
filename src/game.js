@@ -58,11 +58,9 @@ class Game {
       const pieceObj = new Piece(p)
       const div = pieceObj.toDiv
       div.addEventListener('click', handler = (e) => {
-        e.stopPropagation()
         if (e.target.dataset.color != Game.turn && !this.selectedPiece)
           alert(`its ${Game.turn}'s turn`)
         else if (this.selectedPiece) {
-          // this.selectedPiece.style.border = ''
           if (this.selectedPiece.dataset.color === e.target.dataset.color) {
             this.selectedPiece.style.border = ''
             this.selectedPiece = e.target
@@ -71,9 +69,6 @@ class Game {
           else {
             pieceObj.capture(e.target)
             e.target.removeEventListener('click', handler)
-            // e.target.style.gridArea = p.position
-            
-            // controller.abort()
           }
 
         }
@@ -83,7 +78,6 @@ class Game {
         }
 
       }, 
-      // { signal: controller.signal }
       )
 
       document.getElementById('board').appendChild(div)

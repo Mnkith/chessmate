@@ -10,17 +10,15 @@ class Piece {
   }
 
   capture(captive) {
-    // const captive = e.target
     const capturesContainer = document.getElementById(`${Game.selectedPiece.dataset.color}-captures`)
-    // const pieceDiv = this.toDiv
     captive.style.border = ''
     captive.className = 'captured'
     Game.selectedPiece.style.gridArea = captive.style.gridArea
     captive.style.gridArea = captive.dataset.defaultPos
-    Game.updateTurn()
     capturesContainer.appendChild(captive)
     Game.selectedPiece.style.border = ''
     Game.selectedPiece = ''
+    Game.updateTurn()
   }
 
   get toDiv() {

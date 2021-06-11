@@ -10,6 +10,10 @@ class Piece {
     this.initial = p.initial
   }
 
+  switchColor() {
+    return this.color == 'black' ? 'white' : 'black'
+  }
+
   capture(captive) {
     const capturesContainer = document.getElementById(`${Game.selectedPiece.dataset.color}-captures`)
     captive.style.border = ''
@@ -17,14 +21,16 @@ class Piece {
     Game.selectedPiece.style.gridArea = captive.style.gridArea
     Game.selectedPiece.dataset.position = captive.style.gridArea.slice(0, 2)
     // console.log( captive)
-
-    console.log(Game.selectedPiece.dataset.id)
+    
+    // console.log(Game.selectedPiece.dataset.id)
     this.position = captive.style.gridArea.slice(0, 2)
     // console.log(this)
     // console.log('before', this.position)
+    captive.style.gridArea = 'x' + captive.dataset.defaultPos
+    this.defaultPos = 'x' + captive.dataset.defaultPos
     this.updatePosision()
-    captive.style.gridArea = captive.dataset.defaultPos
     // console.log(this.position)
+    
     capturesContainer.appendChild(captive)
     Game.selectedPiece.style.border = ''
     Game.selectedPiece = ''
@@ -40,6 +46,17 @@ class Piece {
       },
       body: JSON.stringify({
         position: this.position
+      }),
+    })
+
+    fetch(`http://localhost:3000/games/${Game.currentGameId}/pieces/${this.id}`, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: JSON.stringify({
+        position: this.defaultPos
       }),
     })
   }

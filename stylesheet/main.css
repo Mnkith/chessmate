@@ -159,8 +159,8 @@
   gap: 1px;
   grid-template-rows: repeat(2, 1fr);
   grid-template-columns: repeat(8, 1fr);
-  grid-template-areas: "a1 b1 c1 d1 e1 f1 g1 h1"
-                       "a2 b2 c2 d2 e2 f2 g2 h2";
+  grid-template-areas: "xa1 xb1 xc1 xd1 xe1 xf1 xg1 xh1"
+                       "xa2 xb2 xc2 xd2 xe2 xf2 xg2 xh2";
   background-color: rgb(167, 118, 118);
   grid-area: bc;
   width: 400px;
@@ -173,8 +173,8 @@
   gap: 1px;
   grid-template-rows: repeat(2, 1fr);
   grid-template-columns: repeat(8, 1fr);
-  grid-template-areas: "a7 b7 c7 d7 e7 f7 g7 h7"
-                       "a8 b8 c8 d8 e8 f8 g8 h8";
+  grid-template-areas: "xa7 xb7 xc7 xd7 xe7 xf7 xg7 xh7"
+                       "xa8 xb8 xc8 xd8 xe8 xf8 xg8 xh8";
   background-color: rgb(167, 118, 118);
   grid-area: wc;
   width: 400px;

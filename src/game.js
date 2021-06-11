@@ -50,6 +50,8 @@ class Game {
     return Game.turn == 'black' ? Game.turn = 'white' : Game.turn = 'black'
   }
 
+  
+
   static initializeBoard(game) {
     // const controller = new AbortController();
     // console.log(game.event)
@@ -58,35 +60,44 @@ class Game {
       let handler
       const pieceObj = new Piece(p)
       const div = pieceObj.toDiv()
-      div.addEventListener('click', handler = (e) => {
-        console.log(div.dataset.id)
-        if (e.target.dataset.color != Game.turn && !this.selectedPiece)
-          alert(`its ${Game.turn}'s turn`)
-        else if (this.selectedPiece) {
-          if (this.selectedPiece.dataset.defaultPos === e.target.dataset.defaultPos){
-            e.target.style.border = ''
-            this.selectedPiece = ''
-          }
-          else if(this.selectedPiece.dataset.color === e.target.dataset.color) {
-            this.selectedPiece.style.border = ''
-            this.selectedPiece = e.target
-            e.target.style.border = '3px dashed rgb(238, 42, 8)'
+      if (p.position.startsWith('x')) {
+        const capturesContainer = document.getElementById(`${pieceObj.switchColor()}-captures`)
+        // console.log(capturesContainer)
+        console.log('ggggg')
+        div.className = 'captured'
+        capturesContainer.appendChild(div)
+      }
+      else {
+        div.addEventListener('click', handler = (e) => {
+          console.log(div.dataset.id)
+          if (e.target.dataset.color != Game.turn && !this.selectedPiece)
+            alert(`its ${Game.turn}'s turn`)
+          else if (this.selectedPiece) {
+            if (this.selectedPiece.dataset.defaultPos === e.target.dataset.defaultPos) {
+              e.target.style.border = ''
+              this.selectedPiece = ''
+            }
+            else if (this.selectedPiece.dataset.color === e.target.dataset.color) {
+              this.selectedPiece.style.border = ''
+              this.selectedPiece = e.target
+              e.target.style.border = '3px dashed rgb(238, 42, 8)'
+            }
+            else {
+              pieceObj.capture(e.target)
+              e.target.removeEventListener('click', handler)
+            }
+
           }
           else {
-            pieceObj.capture(e.target)
-            e.target.removeEventListener('click', handler)
+            div.style.border = '3px dashed rgb(238, 42, 8)'
+            this.selectedPiece = div
           }
 
-        }
-        else {
-          div.style.border = '3px dashed rgb(238, 42, 8)'
-          this.selectedPiece = div
-        }
+        },
+        )
+        document.getElementById('board').appendChild(div)
+      }
 
-      }, 
-      )
-
-      document.getElementById('board').appendChild(div)
     })
   }
 
@@ -100,7 +111,7 @@ class Game {
       },
       body: JSON.stringify(this)
     })
-    .then(resp => resp.json())
-    .then(game => Game.fetchGame(game.id))
+      .then(resp => resp.json())
+      .then(game => Game.fetchGame(game.id))
   }
 }

@@ -27,7 +27,7 @@ newGameBtn.addEventListener('click', (e) => {
   const game = new Game('last99')
   game.setScene()
   // game.persistAndRetrieve()
-  Game.fetchGame(2)
+  Game.fetchGame(4)
 })
 
 // backBtn.addEventListener('click', (e) => { Menu.show('main-menu')})

@@ -59,6 +59,7 @@ class Game {
       const pieceObj = new Piece(p)
       const div = pieceObj.toDiv()
       div.addEventListener('click', handler = (e) => {
+        console.log(div.dataset.id)
         if (e.target.dataset.color != Game.turn && !this.selectedPiece)
           alert(`its ${Game.turn}'s turn`)
         else if (this.selectedPiece) {

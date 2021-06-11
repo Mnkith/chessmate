@@ -16,11 +16,11 @@ class Piece {
     captive.className = 'captured'
     Game.selectedPiece.style.gridArea = captive.style.gridArea
     Game.selectedPiece.dataset.position = captive.style.gridArea.slice(0, 2)
-    console.log( captive)
+    // console.log( captive)
 
-    console.log(this.selectedPiece.dataset.id)
+    console.log(Game.selectedPiece.dataset.id)
     this.position = captive.style.gridArea.slice(0, 2)
-    console.log(this)
+    // console.log(this)
     // console.log('before', this.position)
     this.updatePosision()
     captive.style.gridArea = captive.dataset.defaultPos

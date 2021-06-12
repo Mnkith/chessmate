@@ -15,26 +15,19 @@ class Piece {
   }
 
   capture(captive) {
-    // const captive = this.toDiv()
-    console.log(Game.selectedPiece)
-    console.log(captive)
-    console.log(this)
+    // console.log(Game.selectedPiece)
+    // console.log(captive)
     
-    // captive.style.border = ''
     captive.className = 'captured'
     Game.selectedPiece.style.gridArea = captive.style.gridArea
     Game.selectedPiece.dataset.position = captive.style.gridArea.slice(0, 2)
-    // console.log( captive)
     
-    // console.log(Game.selectedPiece.dataset.id)
-    // console.log(this)
-    // console.log('before', this.position)
     captive.style.gridArea = 'x' + captive.dataset.defaultPos
-    this.position = captive.style.gridArea
-    // this.defaultPos = 'x' + captive.dataset.defaultPos
+    this.position = 'x' + captive.dataset.defaultPos
+
+    console.log(this.position.slice(1))
+    console.log(this.position, "ppp")
     this.updatePosision()
-    // console.log(this.position)
-    
     document.getElementById('board').appendChild(captive)
     Game.selectedPiece.style.border = ''
     Game.selectedPiece = ''
@@ -42,14 +35,17 @@ class Piece {
   }
 
   updatePosision(){
+    // console.log(this.position.slice(1))
+    // console.log(Game.selectedPiece.dataset.position)
     fetch(`http://localhost:3000/games/${Game.currentGameId}/pieces/${Game.selectedPiece.dataset.id}`, {
+      
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",
         Accept: "application/json",
       },
       body: JSON.stringify({
-        position: Game.selectedPiece.dataset.position
+        position: this.position.slice(1)
       }),
     })
 

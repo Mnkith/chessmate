@@ -69,7 +69,7 @@ class Game {
       }
       else {
         div.addEventListener('click', handler = (e) => {
-          console.log(div.dataset.id)
+          // console.log(div.dataset.id)
           if (e.target.dataset.color != Game.turn && !this.selectedPiece)
             alert(`its ${Game.turn}'s turn`)
           else if (this.selectedPiece) {

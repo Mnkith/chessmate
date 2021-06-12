@@ -27,7 +27,7 @@ newGameBtn.addEventListener('click', (e) => {
   const game = new Game('last99')
   game.setScene()
   // game.persistAndRetrieve()
-  Game.fetchGame(7)
+  Game.fetchGame(10)
 })
 
 // backBtn.addEventListener('click', (e) => { Menu.show('main-menu')})
@@ -50,21 +50,25 @@ squares.forEach( (square) => square.addEventListener( 'click', () => {
     //   // iterations: Infinity
     // })
     // setTimeout(() => {
-      Game.selectedPiece.style.gridArea = square.style.gridArea
+    Game.selectedPiece.style.gridArea = square.style.gridArea
+    Game.selectedPiece.dataset.position = square.style.gridArea.slice(0, 2)
     Game.selectedPiece.style.border = ''
-    Game.selectedPiece = ''
     Game.switchTurn()
+    console.log(Game.selectedPiece.dataset.id)
+
+    fetch(`http://localhost:3000/games/${Game.currentGameId}/pieces/${Game.selectedPiece.dataset.id}`, {
       
-    // }, 1005);
-    
-    // console.log(square.offsetLeft)
-    // console.log(t.offsetTop)
-    // console.log(t.offsetParent)
-    // console.log(t.parentElement)
-    // console.log(square.offsetTop)
-    // console.log(square.offsetParent)
-    // console.log(square.parentElement)
-    // console.log('&&&&&&&&&&&&&&&')
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: JSON.stringify({
+        position: Game.selectedPiece.dataset.position
+      }),
+    })
+    Game.selectedPiece = ''
+
   }
 }))
 

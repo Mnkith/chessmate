@@ -1,5 +1,5 @@
 class Menu {
-  static _menus = ['main-menu', 'white-captures', 'black-captures', 'board']
+  static _menus = ['main-menu', 'board']
 
   static show(menu){
     Menu._menus.forEach( (men) => {

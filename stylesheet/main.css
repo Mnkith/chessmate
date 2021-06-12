@@ -30,9 +30,13 @@
   background-color: rgb(7, 7, 7);
   gap: 1px;
   /* padding: 1px; */
-  grid-template-rows: repeat(8, 1fr) 20px;
-  grid-template-columns: repeat(8, 1fr) 10px;
-  grid-template-areas: "a8 b8 c8 d8 e8 f8 g8 h8 n8"
+  grid-template-rows: 1fr 1fr 20px repeat(8, 1fr) 20px 1fr 1fr;
+  grid-template-columns: repeat(8, 1fr) 20px ;
+
+  grid-template-areas: "xa1 xb1 xc1 xd1 xe1 xf1 xg1 xh1 ss"
+                       "xa2 xb2 xc2 xd2 xe2 xf2 xg2 xh2 ss"
+                       "uu uu uu uu uu uu uu uu ss"
+                       "a8 b8 c8 d8 e8 f8 g8 h8 n8"
                        "a7 b7 c7 d7 e7 f7 g7 h7 n7"
                        "a6 b6 c6 d6 e6 f6 g6 h6 n6"
                        "a5 b5 c5 d5 e5 f5 g5 h5 n5"
@@ -40,18 +44,37 @@
                        "a3 b3 c3 d3 e3 f3 g3 h3 n3"
                        "a2 b2 c2 d2 e2 f2 g2 h2 n2"
                        "a1 b1 c1 d1 e1 f1 g1 h1 n1"
-                       "la lb lc ld le lf lg lh xx";
+                       "la lb lc ld le lf lg lh dd"
+                       "xa7 xb7 xc7 xd7 xe7 xf7 xg7 xh7 bb"
+                       "xa8 xb8 xc8 xd8 xe8 xf8 xg8 xh8 bb"
+
+
+
+                       /* "xa1 xb1 xc1 xd1 xe1 xf1 xg1 xh1"
+                       "xa2 xb2 xc2 xd2 xe2 xf2 xg2 xh2"
+                       "a8 b8 c8 d8 e8 f8 g8 h8 n8"
+                       "a7 b7 c7 d7 e7 f7 g7 h7 n7"
+                       "a6 b6 c6 d6 e6 f6 g6 h6 n6"
+                       "a5 b5 c5 d5 e5 f5 g5 h5 n5"
+                       "a4 b4 c4 d4 e4 f4 g4 h4 n4"
+                       "a3 b3 c3 d3 e3 f3 g3 h3 n3"
+                       "a2 b2 c2 d2 e2 f2 g2 h2 n2"
+                       "a1 b1 c1 d1 e1 f1 g1 h1 n1"
+                       "la lb lc ld le lf lg lh xx"
+                       "xa7 xb7 xc7 xd7 xe7 xf7 xg7 xh7"
+                       "xa8 xb8 xc8 xd8 xe8 xf8 xg8 xh8" */
+                       ;
   /* grid-auto-rows: minmax(100px, auto); */
-  height: 420px;
-  width: 410px;
+  height: 640px;
+  width: 420px;
   grid-area: cb;
   cursor: pointer;
   /* visibility: hidden; */
 }
 
-/* #board {
+#board {
   visibility: hidden;
-} */
+}
 
 
 .digit-label{
@@ -138,12 +161,12 @@
   grid-template-rows: 100px repeat(8, 1fr);
   grid-template-columns: repeat(10, 1fr) ;
   grid-template-areas:
-                       " hh yy yy bc bc bc bc xx xx h7"
+                       " hh yy yy cb cb cb cb xx xx h7"
                        " zz bb cc cb cb cb cb xx xx h6"
                        " zz bb cc cb cb cb cb xx xx h5"
                        " zz bb cc cb cb cb cb xx xx h4"
                        " zz bb cc cb cb cb cb xx xx h3"
-                       " zz bb cc wc wc wc wc xx xx h2"
+                       " zz bb cc cb cb cb cb xx xx h2"
                        " zz bb cc c1 d1 e1 f1 xx xx h1"
                        " zz bb cc c1 d1 e1 f1 xx xx h1"
                        " zz bb cc c1 d1 e1 f1 xx xx h1"

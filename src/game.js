@@ -40,10 +40,10 @@ class Game {
     document.body.style.backgroundColor = 'black'
     document.body.style.backgroundImage = ""
     document.getElementById('main-menu').style.visibility = 'hidden'
-    document.getElementById('white-captures').style.visibility = 'visible'
+    // document.getElementById('white-captures').style.visibility = 'visible'
     document.getElementById('board').style.visibility = 'visible'
-    document.getElementById('white-captures').style.visibility = 'visible'
-    document.getElementById('black-captures').style.visibility = 'visible'
+    // document.getElementById('white-captures').style.visibility = 'visible'
+    // document.getElementById('black-captures').style.visibility = 'visible'
   }
 
   static switchTurn() {
@@ -65,7 +65,7 @@ class Game {
         // console.log(capturesContainer)
         console.log('ggggg')
         div.className = 'captured'
-        capturesContainer.appendChild(div)
+        document.getElementById('board').appendChild(div)
       }
       else {
         div.addEventListener('click', handler = (e) => {
@@ -83,7 +83,7 @@ class Game {
               e.target.style.border = '3px dashed rgb(238, 42, 8)'
             }
             else {
-              pieceObj.capture(e.target)
+              pieceObj.setCaptured()
               e.target.removeEventListener('click', handler)
             }
 

@@ -14,8 +14,12 @@ class Piece {
     return this.color == 'black' ? 'white' : 'black'
   }
 
-  capture(captive) {
-    const capturesContainer = document.getElementById(`${Game.selectedPiece.dataset.color}-captures`)
+  setCaptured() {
+    const captive = this.toDiv()
+    console.log(Game.selectedPiece)
+    console.log(captive)
+    console.log(this)
+    
     captive.style.border = ''
     captive.className = 'captured'
     Game.selectedPiece.style.gridArea = captive.style.gridArea
@@ -23,15 +27,15 @@ class Piece {
     // console.log( captive)
     
     // console.log(Game.selectedPiece.dataset.id)
-    this.position = captive.style.gridArea.slice(0, 2)
     // console.log(this)
     // console.log('before', this.position)
     captive.style.gridArea = 'x' + captive.dataset.defaultPos
-    this.defaultPos = 'x' + captive.dataset.defaultPos
+    this.position = captive.style.gridArea
+    // this.defaultPos = 'x' + captive.dataset.defaultPos
     this.updatePosision()
     // console.log(this.position)
     
-    capturesContainer.appendChild(captive)
+    document.getElementById('board').appendChild(captive)
     Game.selectedPiece.style.border = ''
     Game.selectedPiece = ''
     Game.switchTurn()
@@ -56,7 +60,7 @@ class Piece {
         Accept: "application/json",
       },
       body: JSON.stringify({
-        position: this.defaultPos
+        position: this.position
       }),
     })
   }

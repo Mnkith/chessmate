@@ -1,32 +1,23 @@
 class Game {
-  // static currentGame = 'kkk'
   static turn = 'white'
   static selectedPiece = ''
   static currentGameId = 0
 
   constructor(event = '', site = '', white = 'White', black = 'Black') {
+    // this.id = 8
     this.event = event
     this.site = site
     this.white = white
     this.black = black
-    // this.piecs = pieces
   }
-  // static createNewGame(event, site = '', white = 'White', black = 'Black', pieces = []) {
-  //   let game = new Game(event, site, white, black, pieces)
-  //   fetch("http://localhost:3000/games", {
-  //     method: "POST",
-  //     headers: {
-  //       "Content-Type": "application/json",
-  //       "Accept": "application/json"
-  //     },
-  //     body: JSON.stringify({event: 'eeee'})
-  //   });
-  // }
-  // static fetchAllGames() {
-  //   fetch(`http://127.0.0.1:3000/games`)
-  //     .then(resp => resp.json())
-  //   // .then(json => initializeBoard(json));
-  // }
+
+  set id(gameId){
+    this._id = gameId
+  }
+
+  get id(){
+    return this.id
+  }
 
   static fetchGame(round = 0) {
     Game.currentGameId = round
@@ -36,14 +27,10 @@ class Game {
   }
 
   setScene() {
-    console.log('setScene')
     document.body.style.backgroundColor = 'black'
     document.body.style.backgroundImage = ""
     document.getElementById('main-menu').style.visibility = 'hidden'
-    // document.getElementById('white-captures').style.visibility = 'visible'
     document.getElementById('board').style.visibility = 'visible'
-    // document.getElementById('white-captures').style.visibility = 'visible'
-    // document.getElementById('black-captures').style.visibility = 'visible'
   }
 
   static switchTurn() {
@@ -112,6 +99,10 @@ class Game {
       body: JSON.stringify(this)
     })
       .then(resp => resp.json())
-      .then(game => Game.fetchGame(game.id))
+      .then(game => {
+        this.id = game.id
+        console.log(this._id)
+        Game.fetchGame(game.id)
+      })
   }
 }

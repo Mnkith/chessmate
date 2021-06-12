@@ -15,18 +15,11 @@ class Piece {
   }
 
   capture(captive) {
-    // console.log(Game.selectedPiece)
-    // console.log(captive)
-    
     captive.className = 'captured'
     Game.selectedPiece.style.gridArea = captive.style.gridArea
     Game.selectedPiece.dataset.position = captive.style.gridArea.slice(0, 2)
-    
     captive.style.gridArea = 'x' + captive.dataset.defaultPos
     this.position = 'x' + captive.dataset.defaultPos
-
-    console.log(this.position.slice(1))
-    console.log(this.position, "ppp")
     this.updatePosision()
     document.getElementById('board').appendChild(captive)
     Game.selectedPiece.style.border = ''
@@ -35,8 +28,6 @@ class Piece {
   }
 
   updatePosision(){
-    // console.log(this.position.slice(1))
-    // console.log(Game.selectedPiece.dataset.position)
     fetch(`http://localhost:3000/games/${Game.currentGameId}/pieces/${Game.selectedPiece.dataset.id}`, {
       
       method: "PATCH",

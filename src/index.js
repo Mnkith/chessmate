@@ -1,16 +1,9 @@
-// let game = new Game('eeeee')
-// console.log(game)
-// game.persist()
-
 document.body.style.backgroundImage = "url('chess.jpg')"
 document.body.style.backgroundRepeat = 'no-repeat'
-
 document.body.style.backgroundColor = 'black'
 const mainMenu = document.getElementById('main-menu')
-// const newGameMenu = document.getElementById('new-game-menu')
 const newGameBtn = document.getElementById('new-game')
-// const startGameBtn = document.getElementById('start-game')
-// const backBtn = document.getElementById('back-to-main')
+const backBtn = document.getElementById('back-to-main')
 const board = document.getElementById('board')
 const squares = document.querySelectorAll('.square')
 
@@ -24,10 +17,11 @@ Menu.show('main-menu')
 newGameBtn.addEventListener('click', (e) => { 
   e.preventDefault()
   e.stopPropagation()
-  const game = new Game('last99')
-  game.setScene()
-  // game.persistAndRetrieve()
-  Game.fetchGame(10)
+  const newGame = new Game('last99')
+  newGame.setScene()
+  newGame.persistAndRetrieve()
+  // console.log(newGame._id)
+  // Game.fetchGame(10)
 })
 
 // backBtn.addEventListener('click', (e) => { Menu.show('main-menu')})
@@ -38,8 +32,8 @@ function setSquaresIds() {
 
 squares.forEach( (square) => square.addEventListener( 'click', () => {
   if(Game.selectedPiece){
-    const sParent = square.parentElement
-    const t = Game.selectedPiece
+    // const sParent = square.parentElement
+    // const t = Game.selectedPiece
     // t.animate([
     //   // keyframes
     //   { transform: `translateY(${t.offsetTop}px)` },
@@ -54,7 +48,6 @@ squares.forEach( (square) => square.addEventListener( 'click', () => {
     Game.selectedPiece.dataset.position = square.style.gridArea.slice(0, 2)
     Game.selectedPiece.style.border = ''
     Game.switchTurn()
-    console.log(Game.selectedPiece.dataset.id)
 
     fetch(`http://localhost:3000/games/${Game.currentGameId}/pieces/${Game.selectedPiece.dataset.id}`, {
       
@@ -73,40 +66,5 @@ squares.forEach( (square) => square.addEventListener( 'click', () => {
 }))
 
 
-// startGameBtn.addEventListener('click', (e) => {
-//   e.preventDefault()
-//   e.stopPropagation()
-//   const ev = document.getElementById('event').value
-//   // const site = document.getElementById('site').value
-//   // const white = document.getElementById('white').value
-//   // const black = document.getElementById('black').value
-//   // let game = new Game(ev, site, white, black)
-//   let game = new Game(ev)
-//   document.body.style.backgroundColor = 'black'
-//   document.body.style.backgroundImage = ""
-//   mainMenu.style.visibility = 'hidden'
-//   newGameMenu.style.visibility = 'hidden'
-//   board.style.visibility = 'visible'
-//   game.persist()
-//   Game.fetchGame()
-// })
-
-// let game = new Game('ev')
-// game.persist()
-// Game.fetchGame(1)
-
-// window.addEventListener('DOMContentLoaded', (event) => {
-//   console.log('DOM fully loaded and parsed');
-
-//   const pieces = document.querySelectorAll('.piece')
-//   let selectedPiece
-//   console.log(pieces)
-//   pieces.forEach((piece) => piece.addEventListener('click', (e) => {
-//     // selectedPiece = piece
-//     piece.innerHTML = ''
-//     console.log('done')
-//     console.log(selectedPiece)
-//   }))
-// })
 
 

@@ -83,7 +83,7 @@ class Game {
               e.target.style.border = '3px dashed rgb(238, 42, 8)'
             }
             else {
-              pieceObj.setCaptured()
+              pieceObj.capture(e.target)
               e.target.removeEventListener('click', handler)
             }
 

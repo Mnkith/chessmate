@@ -14,13 +14,13 @@ class Piece {
     return this.color == 'black' ? 'white' : 'black'
   }
 
-  setCaptured() {
-    const captive = this.toDiv()
+  capture(captive) {
+    // const captive = this.toDiv()
     console.log(Game.selectedPiece)
     console.log(captive)
     console.log(this)
     
-    captive.style.border = ''
+    // captive.style.border = ''
     captive.className = 'captured'
     Game.selectedPiece.style.gridArea = captive.style.gridArea
     Game.selectedPiece.dataset.position = captive.style.gridArea.slice(0, 2)
@@ -49,7 +49,7 @@ class Piece {
         Accept: "application/json",
       },
       body: JSON.stringify({
-        position: this.position
+        position: Game.selectedPiece.dataset.position
       }),
     })
 

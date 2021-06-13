@@ -27,9 +27,9 @@ class Piece {
     Game.switchTurn()
   }
 
-  updatePosision(){
+  updatePosision() {
     fetch(`http://localhost:3000/games/${Game.currentGameId}/pieces/${Game.selectedPiece.dataset.id}`, {
-      
+
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",

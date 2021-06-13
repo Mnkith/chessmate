@@ -92,7 +92,6 @@ class Game {
       .then(resp => resp.json())
       .then(game => {
         this.id = game.id
-        console.log(this._id)
         Game.fetchGame(game.id)
       })
   }

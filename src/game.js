@@ -4,7 +4,6 @@ class Game {
   static currentGameId = 0
 
   constructor(event = '', site = '', white = 'White', black = 'Black') {
-    // this.id = 8
     this.event = event
     this.site = site
     this.white = white
@@ -29,8 +28,7 @@ class Game {
   setScene() {
     document.body.style.backgroundColor = 'black'
     document.body.style.backgroundImage = ""
-    document.getElementById('main-menu').style.visibility = 'hidden'
-    document.getElementById('board').style.visibility = 'visible'
+    Menu.show('board', 'game-menu')
   }
 
   static switchTurn() {
@@ -41,8 +39,6 @@ class Game {
 
   static initializeBoard(game) {
     // const controller = new AbortController();
-    // console.log(game.event)
-    // console.log(game.pieces)
     game.pieces.forEach(p => {
       let handler
       const pieceObj = new Piece(p)
@@ -56,7 +52,6 @@ class Game {
       }
       else {
         div.addEventListener('click', handler = (e) => {
-          // console.log(div.dataset.id)
           if (e.target.dataset.color != Game.turn && !this.selectedPiece)
             alert(`its ${Game.turn}'s turn`)
           else if (this.selectedPiece) {
@@ -67,7 +62,7 @@ class Game {
             else if (this.selectedPiece.dataset.color === e.target.dataset.color) {
               this.selectedPiece.style.border = ''
               this.selectedPiece = e.target
-              e.target.style.border = '3px dashed rgb(238, 42, 8)'
+              e.target.style.border = '3px dashed #131b47'
             }
             else {
               pieceObj.capture(e.target)
@@ -76,7 +71,7 @@ class Game {
 
           }
           else {
-            div.style.border = '3px dashed rgb(238, 42, 8)'
+            div.style.border = '3px dashed #131b47'
             this.selectedPiece = div
           }
 

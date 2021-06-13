@@ -4,20 +4,9 @@
 } */
 .main-menu{
   display:block;
-  /* justify-content: center; */
-  /* align-items: center; */
-  /* height: 200px; */
-  /* border: 3px solid rgb(168, 241, 168); */
+  padding-top: 100px;
   grid-area: cb;
-  /* background-color: rgb(214, 200, 194); */
-  /* height: 400px; */
-  width: 400px;
-  /* align-items: center;
-  align-content: center; */
-  /* border-radius: 4px; */
-  /* opacity: 95%; */
-  /* z-index: 1; */
-  
+  width: 100%;
 }
 
 
@@ -85,7 +74,7 @@
   font-family: cursive;
   text-align: center;
   font-size:medium;
-  visibility: inherit;
+  visibility: hidden;
   /* grid-area: d8; */
 }
 
@@ -102,7 +91,8 @@
   font-family: cursive;
   text-align: center;
   font-size:medium;
-  visibility: inherit;
+  visibility: hidden;
+
   /* grid-area: d8; */
 }
 
@@ -131,19 +121,19 @@
   align-self: center; */
   /* display:block; */
   /* height: 40px; */
-  width: 98%;
+  width: 90%;
   background-color: #242438;
   border: none;
   color: white;
   padding: 20px;
   text-align: center;
   /* text-decoration: none; */
-  display: inline-block;
+  display: block;
   font-size: 16px;
   margin: 4px 2px;
   border-radius: 8px;
   visibility: inherit;
-  opacity: 100%;
+  opacity: 90%;
   margin-top: 60px;
   cursor: pointer;
   
@@ -161,15 +151,15 @@
   grid-template-rows: 100px repeat(8, 1fr);
   grid-template-columns: repeat(10, 1fr) ;
   grid-template-areas:
-                       " hh yy yy cb cb cb cb xx xx h7"
-                       " zz bb cc cb cb cb cb xx xx h6"
-                       " zz bb cc cb cb cb cb xx xx h5"
-                       " zz bb cc cb cb cb cb xx xx h4"
-                       " zz bb cc cb cb cb cb xx xx h3"
-                       " zz bb cc cb cb cb cb xx xx h2"
-                       " zz bb cc c1 d1 e1 f1 xx xx h1"
-                       " zz bb cc c1 d1 e1 f1 xx xx h1"
-                       " zz bb cc c1 d1 e1 f1 xx xx h1"
+                       " hh yy yy cb cb cb cb xx ss ss"
+                       " zz bb cc cb cb cb cb xx sb sb"
+                       " zz bb cc cb cb cb cb xx sb sb"
+                       " zz bb cc cb cb cb cb xx sb sb"
+                       " zz bb cc cb cb cb cb xx sb sb"
+                       " zz bb cc cb cb cb cb xx dd dd"
+                       " zz bb cc c1 d1 e1 f1 xx dd dd"
+                       " zz bb cc c1 d1 e1 f1 xx dd dd"
+                       " zz bb cc c1 d1 e1 f1 xx dd dd"
                        ;
   
   /* grid-auto-rows: minmax(100px, auto); */
@@ -177,7 +167,7 @@
   width: 100%;
 }
 
-#black-captures{
+/* #black-captures{
   display: grid;
   gap: 1px;
   grid-template-rows: repeat(2, 1fr);
@@ -203,7 +193,9 @@
   width: 400px;
   border: black 2px solid;
   visibility: hidden;
-}
+} */
+
+
 
 .black-square {
     font-size: 50px;
@@ -259,5 +251,100 @@
   width: 50%;
   background-color: powderblue;
 } */
+#game-menu {
+  color: antiquewhite;
+  font-family: cursive;
+  font-size: large;
+  display:table-row-group;
+  border-radius: 4px;
+  grid-area: sb;
+  opacity: 11%;
+  transition: opacity 1s;
+  /* background-color: rgb(31, 73, 100); */
+  
+}
+
+#game-id{
+  margin-bottom: 15%;
+}
+
+#game-menu:hover{
+  opacity: 90%;
+}
+
+#toggle-text{
+  color: antiquewhite;
+  font-family: cursive;
+  font-size: large;
+}
+
+.switch {
+  display:flow-root;
+  position: relative;
+  display:flow-root;
+  width: 60px;
+  height: 34px;
+  
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: rgb(231, 49, 49);
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #131b47;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #131b47;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
 
 
+#toggle-lable{
+  font-family: cursive;
+  font-size: medium;
+  display: inline;
+}

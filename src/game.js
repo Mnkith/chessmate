@@ -38,15 +38,11 @@ class Game {
   
 
   static initializeBoard(game) {
-    // const controller = new AbortController();
     game.pieces.forEach(p => {
       let handler
       const pieceObj = new Piece(p)
       const div = pieceObj.toDiv()
       if (p.position.startsWith('x')) {
-        const capturesContainer = document.getElementById(`${pieceObj.switchColor()}-captures`)
-        // console.log(capturesContainer)
-        console.log('ggggg')
         div.className = 'captured'
         document.getElementById('board').appendChild(div)
       }

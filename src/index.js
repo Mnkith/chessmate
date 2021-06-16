@@ -13,28 +13,16 @@ lablesToggle.addEventListener('change', e => {
   if (lablesToggle.checked) {
     document.querySelectorAll('.digit-label').forEach(lbl => lbl.style.visibility = 'visible')
     document.querySelectorAll('.letter-label').forEach(lbl => lbl.style.visibility = 'visible')
-    // console.log(document.querySelectorAll('.digit-lablel'))
   }
   else {
     document.querySelectorAll('.digit-label').forEach(lbl => lbl.style.visibility = 'hidden')
     document.querySelectorAll('.letter-label').forEach(lbl => lbl.style.visibility = 'hidden')
     console.log('unchecked')
-    // e.preventDefault()
   }
 })
-// console.log(document.getElementById('lables-toggle').checked)
-// function myFunction() {
-//   
-//   if (lablesToggle.checked == true){
-//     console.log('ffff')
-//   } else {
-//     // text.style.display = "none";
-//     console.log('ffggggg')
-//   }
-// }
-
 
 setSquaresIds()
+
 Menu.show('main-menu')
 
 newGameBtn.addEventListener('click', (e) => {
@@ -44,8 +32,6 @@ newGameBtn.addEventListener('click', (e) => {
   newGame.setScene()
   newGame.persistAndRetrieve()
 })
-
-// backBtn.addEventListener('click', (e) => { Menu.show('main-menu')})
 
 function setSquaresIds() {
   squares.forEach(square => square.id = square.style.gridArea.substr(0, 2))
@@ -85,7 +71,4 @@ squares.forEach((square) => square.addEventListener('click', () => {
 
   }
 }))
-
-
-// ww = sss.map(zz => zz.split(' ').map(s =>  s.replace(s[0], s[0].toUpperCase())).join(' '))
 

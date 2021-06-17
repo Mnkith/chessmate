@@ -4,7 +4,7 @@ document.body.style.backgroundColor = 'black'
 const mainMenu = document.getElementById('main-menu')
 const newGameBtn = document.getElementById('new-game')
 const backBtn = document.getElementById('back-to-main')
-const retrieveBtn = document.getElementById('retrieve-game')
+const retrieveBtn = document.getElementById('retrieve-btn')
 const board = document.getElementById('board')
 const lablesToggle = document.getElementById('lables-toggle')
 const squares = document.querySelectorAll('.square')
@@ -27,7 +27,9 @@ setSquaresIds()
 
 Menu.show('main-menu')
 
-retrieveBtn.addEventListener('click', () => Menu.show('retrieve-menu'))
+retrieveBtn.addEventListener('click', () => {Menu.show('retrieve-menu')
+console.log(retrieveBtn)
+})
 
 newGameBtn.addEventListener('click', (e) => {
   e.preventDefault()

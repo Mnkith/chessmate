@@ -55,6 +55,7 @@ getGameBtn.addEventListener('click', (e) => {
 
 gmaeExitBtn.addEventListener('click', () => {
   document.body.style.backgroundImage = "url('chess.jpg')"
+  Game.clearBoard()
   Menu.show('main-menu')
 })
 

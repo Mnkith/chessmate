@@ -27,9 +27,15 @@ class Game {
       .then(game => this.initializeBoard(game));
   }
 
+  static clearBoard(){
+    // console.log(document.querySelectorAll('.piece'))
+    document.querySelectorAll('.piece').forEach( piece => console.log(piece))
+  }
+
   static setScene() {
     document.body.style.backgroundColor = 'black'
     document.body.style.backgroundImage = ""
+    Game.clearBoard()
     Menu.show('board', 'game-menu')
   }
 

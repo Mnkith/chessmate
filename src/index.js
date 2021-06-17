@@ -9,8 +9,10 @@ const retrieveBtn = document.getElementById('retrieve-btn')
 const getGameBtn = document.getElementById('get-game-btn')
 const retriveGameField = document.getElementById('retrieve-field')
 const board = document.getElementById('board')
+const gmaeExitBtn = document.getElementById('game-exit-btn')
 const lablesToggle = document.getElementById('lables-toggle')
 const squares = document.querySelectorAll('.square')
+
 
 
 
@@ -49,10 +51,11 @@ getGameBtn.addEventListener('click', (e) => {
     Game.setScene()
     Game.fetchGame(id)
   }
-  // const newGame = new Game('last99')
-  // newGame.persistAndRetrieve()
-  // console.log(Game.currentGameId)
-  // 
+})
+
+gmaeExitBtn.addEventListener('click', () => {
+  document.body.style.backgroundImage = "url('chess.jpg')"
+  Menu.show('main-menu')
 })
 
 

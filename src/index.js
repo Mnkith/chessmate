@@ -2,9 +2,12 @@ document.body.style.backgroundImage = "url('chess.jpg')"
 document.body.style.backgroundRepeat = 'no-repeat'
 document.body.style.backgroundColor = 'black'
 const mainMenu = document.getElementById('main-menu')
+
 const newGameBtn = document.getElementById('new-game')
 const backBtn = document.getElementById('back-to-main')
 const retrieveBtn = document.getElementById('retrieve-btn')
+const getGameBtn = document.getElementById('get-game-btn')
+const retriveGameField = document.getElementById('retrieve-field')
 const board = document.getElementById('board')
 const lablesToggle = document.getElementById('lables-toggle')
 const squares = document.querySelectorAll('.square')
@@ -32,13 +35,24 @@ console.log(retrieveBtn)
 })
 
 newGameBtn.addEventListener('click', (e) => {
-  e.preventDefault()
-  e.stopPropagation()
   const newGame = new Game('last99')
   newGame.persistAndRetrieve()
   console.log(Game.currentGameId)
   newGame.setScene()
 })
+
+getGameBtn.addEventListener('click', (e) => {
+  console.log(retriveGameField.value)
+
+  e.preventDefault()
+  e.stopPropagation()
+  // const newGame = new Game('last99')
+  // newGame.persistAndRetrieve()
+  // console.log(Game.currentGameId)
+  // newGame.setScene()
+})
+
+
 
 function setSquaresIds() {
   squares.forEach(square => square.id = square.style.gridArea.substr(0, 2))

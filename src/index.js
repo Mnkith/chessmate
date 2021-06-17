@@ -35,8 +35,9 @@ newGameBtn.addEventListener('click', (e) => {
   e.preventDefault()
   e.stopPropagation()
   const newGame = new Game('last99')
-  newGame.setScene()
   newGame.persistAndRetrieve()
+  console.log(Game.currentGameId)
+  newGame.setScene()
 })
 
 function setSquaresIds() {

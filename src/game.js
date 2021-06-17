@@ -20,6 +20,7 @@ class Game {
 
   static fetchGame(round = 0) {
     Game.currentGameId = round
+    document.getElementById('game-id').innerHTML = Game.currentGameId
     fetch(`http://127.0.0.1:3000/games/${round}`)
       .then(resp => resp.json())
       .then(game => this.initializeBoard(game));
@@ -28,6 +29,7 @@ class Game {
   setScene() {
     document.body.style.backgroundColor = 'black'
     document.body.style.backgroundImage = ""
+    document.getElementById('game-id').innerHTML = Game.currentGameId
     Menu.show('board', 'game-menu')
   }
 
@@ -91,8 +93,8 @@ class Game {
     })
       .then(resp => resp.json())
       .then(game => {
-        this.id = game.id
-        console.log(this._id)
+        // Game.currentGameId = game.id
+        // console.log(Game.currentGameId)
         Game.fetchGame(game.id)
       })
   }

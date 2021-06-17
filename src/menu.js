@@ -8,7 +8,6 @@ class Menu {
       else
         document.getElementById(men).style.visibility = 'hidden'
     })
-    // document.getElementById(menu).style.visibility = 'visible'
   }
 
 }

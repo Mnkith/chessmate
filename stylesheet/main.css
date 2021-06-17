@@ -99,9 +99,9 @@ body {
   /* grid-area: d8; */
 }
 
-#three-boards{
+/* #three-boards{
   visibility: hidden;
-}
+} */
 
 /* #retrieve-menu {
   color: antiquewhite;
@@ -243,7 +243,7 @@ body {
   user-select: none; 
 }
 .piece {
-  font-size: 2rem;
+  font-size: 30px;
     text-align: center;
     user-select: none; 
     z-index: 9;

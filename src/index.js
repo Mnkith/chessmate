@@ -27,7 +27,7 @@ setSquaresIds()
 
 Menu.show('main-menu')
 
-retrieveBtn.addEventListener('click', Menu.show('retrieve-menu'))
+retrieveBtn.addEventListener('click', () => Menu.show('retrieve-menu'))
 
 newGameBtn.addEventListener('click', (e) => {
   e.preventDefault()

@@ -14,7 +14,7 @@
 
   <div class='page'>
 
-    <div id='game-menu'>
+    <div id='game-menu' class='main-menu'>
       <div id='game-id'>Game ID <div style='display: inline;'>fff</div>
       </div>
       <label class="switch">
@@ -34,17 +34,17 @@
         <label> Black player: <input type="text" name="site" id="black" /></label><br /> -->
         <input id='new-game' type="submit" class='menu-btn' name="submit" id="submit" value="Start New Game" />
       </form>
+      <button id='existing-game' class='menu-btn' type="button">Retrieve Game</button>
+    </div>
 
-
-    <div id='retieve-menu' class='main-menu'>
+    <div id='retrieve-menu' class='main-menu'>
       <form>
         
-        <label> Black player: <input type="text" name="site" id="black" /></label><br /> 
+        <input type="text" name="site" id="black" /></label><br /> 
         <input id='new-game' type="submit" class='menu-btn' name="submit" id="submit" value="Start New Game" />
       </form>
 
-      <!-- <button id='new-game' class='menu-btn' type="button">Start New Game!</button> -->
-      <button id='existing-game' class='menu-btn' type="button">Retrieve Game</button>
+      <button id='new-game' class='menu-btn' type="button">Start New Game!</button>
     </div>
 
     <div id='board' class="wrapper">

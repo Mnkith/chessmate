@@ -7,6 +7,7 @@
   padding-top: 100px;
   grid-area: cb;
   width: 100%;
+  visibility: hidden;
 }
 
 
@@ -81,6 +82,17 @@
 #three-boards{
   visibility: hidden;
 }
+
+/* #retrieve-menu {
+  color: antiquewhite;
+  font-family: cursive;
+  font-size: large;
+  display:table-row-group;
+  border-radius: 4px;
+  grid-area: sb;
+  opacity: 11%;
+  transition: opacity 1s;
+} */
 
 .letter-label{
   color: white;

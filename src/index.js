@@ -24,7 +24,6 @@ lablesToggle.addEventListener('change', e => {
   else {
     document.querySelectorAll('.digit-label').forEach(lbl => lbl.style.visibility = 'hidden')
     document.querySelectorAll('.letter-label').forEach(lbl => lbl.style.visibility = 'hidden')
-    console.log('unchecked')
   }
 })
 
@@ -32,15 +31,12 @@ setSquaresIds()
 
 Menu.show('main-menu')
 
-retrieveBtn.addEventListener('click', () => {Menu.show('retrieve-menu')
-console.log(retrieveBtn)
-})
+retrieveBtn.addEventListener('click', () => Menu.show('retrieve-menu'))
 
 newGameBtn.addEventListener('click', (e) => {
   const newGame = new Game('last99')
   Game.setScene()
   newGame.persistAndRetrieve()
-  // console.log(Game.currentGameId)
 })
 
 getGameBtn.addEventListener('click', (e) => {

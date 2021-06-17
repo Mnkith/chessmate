@@ -28,8 +28,7 @@ class Game {
   }
 
   static clearBoard(){
-    // console.log(document.querySelectorAll('.piece'))
-    document.querySelectorAll('.piece').forEach( piece => console.log(piece))
+    document.querySelectorAll('.piece').forEach( piece => piece.remove())
   }
 
   static setScene() {
@@ -98,10 +97,6 @@ class Game {
       body: JSON.stringify(this)
     })
       .then(resp => resp.json())
-      .then(game => {
-        // Game.currentGameId = game.id
-        // console.log(Game.currentGameId)
-        Game.fetchGame(game.id)
-      })
+      .then(game => Game.fetchGame(game.id))
   }
 }

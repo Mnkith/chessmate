@@ -2,22 +2,32 @@
   background-image: url('example_img_girl.jpg');
   background-repeat: no-repeat;
 } */
+
+body {
+  font-family: cursive;
+}
 .main-menu{
   display:block;
   padding-top: 100px;
   grid-area: cb;
   width: 100%;
   visibility: hidden;
+  font-family: cursive;
 }
 
 #retrieve-field {
-  display:inline-block;
-  align-items:inherit;
+  position: relative;
+  float:none;
+  font-size: large;
+  margin-left: 2%;
+  background-color: #dadada;
+  align-self: center;
   border-style: none;
   width: 85%;
   height: 40px;
-  border-radius: 5px;
+  border-radius: 14px;
   opacity: 90%;
+  font-family: cursive;
 }
 
 
@@ -152,6 +162,7 @@
   /* text-decoration: none; */
   display: block;
   font-size: 16px;
+  font-family: cursive;
   margin: 4px 2px;
   border-radius: 8px;
   visibility: inherit;

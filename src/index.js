@@ -36,20 +36,23 @@ console.log(retrieveBtn)
 
 newGameBtn.addEventListener('click', (e) => {
   const newGame = new Game('last99')
+  Game.setScene()
   newGame.persistAndRetrieve()
-  console.log(Game.currentGameId)
-  newGame.setScene()
+  // console.log(Game.currentGameId)
 })
 
 getGameBtn.addEventListener('click', (e) => {
-  console.log(retriveGameField.value)
-
   e.preventDefault()
   e.stopPropagation()
+  const id = parseInt(retriveGameField.value)
+  if( id ){
+    Game.setScene()
+    Game.fetchGame(id)
+  }
   // const newGame = new Game('last99')
   // newGame.persistAndRetrieve()
   // console.log(Game.currentGameId)
-  // newGame.setScene()
+  // 
 })
 
 

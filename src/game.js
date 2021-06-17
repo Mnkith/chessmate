@@ -20,14 +20,14 @@ class Game {
 
   static fetchGame(round = 0) {
     Game.currentGameId = round
-    
+
     document.getElementById('game-id').innerHTML = Game.currentGameId
     fetch(`http://127.0.0.1:3000/games/${round}`)
       .then(resp => resp.json())
       .then(game => this.initializeBoard(game));
   }
 
-  setScene() {
+  static setScene() {
     document.body.style.backgroundColor = 'black'
     document.body.style.backgroundImage = ""
     document.getElementById('game-id').innerHTML = Game.currentGameId

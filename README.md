@@ -12,6 +12,6 @@
 ## Installation
   To get the game running please run the following terminal commands
 
-  1. bundle install
-  2. rails db:migrate
-  3. rails db:seed
+  1. `bundle install`
+  2. `rails db:migrate`
+  3. `rails db:seed`

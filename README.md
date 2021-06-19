@@ -30,3 +30,7 @@
   - Move undo functionality.
   - A game replay option.
   - Checkmate detection which might lead to automatic game ending.
+
+## License
+
+

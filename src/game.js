@@ -20,7 +20,6 @@ class Game {
 
   static fetchGame(round = 0) {
     Game.currentGameId = round
-
     document.getElementById('game-id').innerText = `Game ID: ${Game.currentGameId}`
     fetch(`http://127.0.0.1:3000/games/${round}`)
       .then(resp => resp.json())

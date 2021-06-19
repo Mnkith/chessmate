@@ -51,6 +51,10 @@ getGameBtn.addEventListener('click', (e) => {
 
 gmaeExitBtn.addEventListener('click', () => {
   document.body.style.backgroundImage = "url('chess.jpg')"
+  document.querySelectorAll('.digit-label').forEach(lbl => lbl.style.visibility = 'hidden')
+  document.querySelectorAll('.letter-label').forEach(lbl => lbl.style.visibility = 'hidden')
+  // document.querySelector('#c-labels').style.visibility = 'hidden'
+  // document.querySelector('#d-labels').style.visibility = 'hidden'
   Game.clearBoard()
   Menu.show('main-menu')
 })
@@ -81,7 +85,6 @@ squares.forEach((square) => square.addEventListener('click', () => {
     Game.switchTurn()
 
     fetch(`http://localhost:3000/games/${Game.currentGameId}/pieces/${Game.selectedPiece.dataset.id}`, {
-
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",
@@ -92,7 +95,6 @@ squares.forEach((square) => square.addEventListener('click', () => {
       }),
     })
     Game.selectedPiece = ''
-
   }
 }))
 

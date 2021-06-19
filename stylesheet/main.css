@@ -13,6 +13,7 @@ body {
   width: 100%;
   visibility: hidden;
   font-family: cursive;
+  z-index: 5;
 }
 
 #retrieve-field {
@@ -28,6 +29,7 @@ body {
   border-radius: 14px;
   opacity: 90%;
   font-family: cursive;
+  text-indent: 5%;
 }
 
 
@@ -46,15 +48,15 @@ body {
   grid-template-areas: "xa1 xb1 xc1 xd1 xe1 xf1 xg1 xh1 ss"
                        "xa2 xb2 xc2 xd2 xe2 xf2 xg2 xh2 ss"
                        "uu uu uu uu uu uu uu uu ss"
-                       "a8 b8 c8 d8 e8 f8 g8 h8 n8"
-                       "a7 b7 c7 d7 e7 f7 g7 h7 n7"
-                       "a6 b6 c6 d6 e6 f6 g6 h6 n6"
-                       "a5 b5 c5 d5 e5 f5 g5 h5 n5"
-                       "a4 b4 c4 d4 e4 f4 g4 h4 n4"
-                       "a3 b3 c3 d3 e3 f3 g3 h3 n3"
-                       "a2 b2 c2 d2 e2 f2 g2 h2 n2"
-                       "a1 b1 c1 d1 e1 f1 g1 h1 n1"
-                       "la lb lc ld le lf lg lh dd"
+                       "a8 b8 c8 d8 e8 f8 g8 h8 nn"
+                       "a7 b7 c7 d7 e7 f7 g7 h7 nn"
+                       "a6 b6 c6 d6 e6 f6 g6 h6 nn"
+                       "a5 b5 c5 d5 e5 f5 g5 h5 nn"
+                       "a4 b4 c4 d4 e4 f4 g4 h4 nn"
+                       "a3 b3 c3 d3 e3 f3 g3 h3 nn"
+                       "a2 b2 c2 d2 e2 f2 g2 h2 nn"
+                       "a1 b1 c1 d1 e1 f1 g1 h1 nn"
+                       "ll ll ll ll ll ll ll ll dd"
                        "xa7 xb7 xc7 xd7 xe7 xf7 xg7 xh7 bb"
                        "xa8 xb8 xc8 xd8 xe8 xf8 xg8 xh8 bb"
 
@@ -86,16 +88,29 @@ body {
   visibility: hidden;
 }
 
+#c-labels{
+  display:flex;
+  justify-content:space-around;
+}
+
+/* .d-labels{
+  display:;
+  justify-content:space-between;
+} */
+
 
 .digit-label{
   color: white;
-  background-color: rgb(5, 5, 5);
-  text-align: left;
-  padding-top: 8px;
+  /* background-color: rgb(5, 5, 5); */
+  /* text-align: left; */
+  /* padding-top: 8px; */
+  padding-top: 11px;
+  padding-bottom: 11px;
   font-family: cursive;
-  text-align: center;
+  text-align: left;
   font-size:medium;
   visibility: hidden;
+  /* z-index: 0; */
   /* grid-area: d8; */
 }
 
@@ -120,10 +135,13 @@ body {
   text-align: left;
   /* padding-top: 8px; */
   padding-bottom: 5px;
+  /* padding-left: 17px; */
+  /* padding-right: 11%; */
   font-family: cursive;
   text-align: center;
   font-size:medium;
   visibility: hidden;
+  z-index: 0;
 
   /* grid-area: d8; */
 }
@@ -243,10 +261,11 @@ body {
   user-select: none; 
 }
 .piece {
-  font-size: 30px;
+  font-size: 26px;
     text-align: center;
     user-select: none; 
     z-index: 9;
+
 }
 
 .piece:hover {

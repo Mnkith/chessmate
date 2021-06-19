@@ -33,4 +33,4 @@
 
 ## License
 
-
+This app is under the [MIT](license.txt)

@@ -19,4 +19,4 @@
 ## Support
   This app is in it's preliminarily stages and open to all kinds of support, and most certainly appreciated.
   
-  [Email: ](munkithabid@gmail.com)
+  munkithabid@gmail.com

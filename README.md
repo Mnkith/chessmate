@@ -7,4 +7,4 @@
 
 ---
 
-![chessgame demo GIF](https://media.giphy.com/media/vFKqnCdLPNOKc/giphy.gif)
+![chessgame demo GIF](demo.gif)

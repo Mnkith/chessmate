@@ -37,4 +37,4 @@ This app is under the [MIT](license.txt)
 
 ## Project status
 
-This project still under development and any suggestions and improvements are welcomed!
+This project still under development and any suggestions and improvements are welcome!

@@ -10,4 +10,9 @@ class Menu {
     })
   }
 
+  static toggleLables(){
+    const visibility = document.getElementById('c-labels') == 'visible' ? 'hidden' : 'visisble'
+    document.querySelector('#c-labels').style.visibility = document.querySelector('#d-labels').style.visibility = visibility
+  }
+
 }

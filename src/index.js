@@ -17,14 +17,7 @@ const squares = document.querySelectorAll('.square')
 
 
 lablesToggle.addEventListener('change', e => {
-  if (lablesToggle.checked) {
-    document.querySelectorAll('.digit-label').forEach(lbl => lbl.style.visibility = 'visible')
-    document.querySelectorAll('.letter-label').forEach(lbl => lbl.style.visibility = 'visible')
-  }
-  else {
-    document.querySelectorAll('.digit-label').forEach(lbl => lbl.style.visibility = 'hidden')
-    document.querySelectorAll('.letter-label').forEach(lbl => lbl.style.visibility = 'hidden')
-  }
+  Menu.toggleLables()
 })
 
 setSquaresIds()
@@ -43,7 +36,7 @@ getGameBtn.addEventListener('click', (e) => {
   e.preventDefault()
   e.stopPropagation()
   const id = parseInt(retriveGameField.value)
-  if( id ){
+  if (id) {
     Game.setScene()
     Game.fetchGame(id)
   }
@@ -51,10 +44,9 @@ getGameBtn.addEventListener('click', (e) => {
 
 gmaeExitBtn.addEventListener('click', () => {
   document.body.style.backgroundImage = "url('chess.jpg')"
-  document.querySelectorAll('.digit-label').forEach(lbl => lbl.style.visibility = 'hidden')
-  document.querySelectorAll('.letter-label').forEach(lbl => lbl.style.visibility = 'hidden')
-  // document.querySelector('#c-labels').style.visibility = 'hidden'
-  // document.querySelector('#d-labels').style.visibility = 'hidden'
+  document.querySelector('#c-labels').style.visibility = 'hidden'
+  document.querySelector('#d-labels').style.visibility = 'hidden'
+  lablesToggle.checked = false
   Game.clearBoard()
   Menu.show('main-menu')
 })

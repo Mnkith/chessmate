@@ -9,7 +9,7 @@ const retrieveBtn = document.getElementById('retrieve-btn')
 const getGameBtn = document.getElementById('get-game-btn')
 const retriveGameField = document.getElementById('retrieve-field')
 const board = document.getElementById('board')
-const gmaeExitBtn = document.getElementById('game-exit-btn')
+const gameExitBtn = document.getElementById('game-exit-btn')
 const lablesToggle = document.getElementById('lables-toggle')
 const squares = document.querySelectorAll('.square')
 
@@ -42,7 +42,7 @@ getGameBtn.addEventListener('click', (e) => {
   }
 })
 
-gmaeExitBtn.addEventListener('click', () => {
+gameExitBtn.addEventListener('click', () => {
   document.body.style.backgroundImage = "url('chess.jpg')"
   document.querySelector('#c-labels').style.visibility = 'hidden'
   document.querySelector('#d-labels').style.visibility = 'hidden'
